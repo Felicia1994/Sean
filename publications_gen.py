@@ -4,7 +4,8 @@ try:
 except ImportError:
     from bs4 import BeautifulSoup
 
-with open("publications.html", "w") as tgt_file:
+tgt_filename = "publications_page.html"
+with open(tgt_filename, "w") as tgt_file:
     pass
 
 header_html = """
@@ -60,10 +61,10 @@ header_html = """
             <a class="nav-link js-scroll active" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="research.html">Research</a>
+            <a class="nav-link js-scroll" href="research_page.html">Research</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="publications.html">Publications</a>
+            <a class="nav-link js-scroll" href="publications_page.html">Publications</a>
           </li>
         </ul>
       </div>
@@ -88,15 +89,17 @@ header_html = """
       </div>
       <div id="publications" class="row">
 """
-with open("publications.html", "a") as tgt_file:
+with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(header_html)
-publications_html = ""
-with open("data/publications.html", "r") as src_file:
+
+src_filename = "data/publications.html"
+with open(src_filename, "r") as src_file:
     src_html = src_file.read()
 parsed_src_html = BeautifulSoup(src_html, "lxml")
 print(type(parsed_src_html))
 publications = parsed_src_html.body.find_all('ul', recursive=False)[0].find_all('li', recursive=False)
 print(type(publications))
+publications_html = ""
 for pub in publications:
     title = pub.find('h2', recursive=False).text
     info = pub.find('table').find('tbody')
@@ -166,11 +169,12 @@ for pub in publications:
             </div>
           </div>
         </div>
-    """.format(img, ", ".join(authors)+". "+title+". "+journal_abbr+" "+volume+", "+pages+" ("+year+"). doi: <a href='"+doi+"'><u>"+doi+"</u></a>" )
+    """.format(img, ", ".join(authors)+". "+title+". "+journal_abbr+" "+volume+", "+pages+" ("+year+"). doi: <a href='http://doi.org/"+doi+"'><u>"+doi+"</u></a>" )
     publications_html += pub_html
 
-with open("publications.html", "a") as tgt_file:
+with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(publications_html)
+
 footer_html = """
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
@@ -195,5 +199,5 @@ footer_html = """
 </body>
 </html>
 """
-with open("publications.html", "a") as tgt_file:
+with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(footer_html)
