@@ -1,8 +1,8 @@
-import re
 try: 
     from BeautifulSoup import BeautifulSoup
 except ImportError:
     from bs4 import BeautifulSoup
+from pub_parser import PubParser
 
 tgt_filename = "publications_page.html"
 with open(tgt_filename, "w") as tgt_file:
@@ -101,48 +101,7 @@ publications = parsed_src_html.body.find_all('ul', recursive=False)[0].find_all(
 print(type(publications))
 publications_html = ""
 for pub in publications:
-    title = pub.find('h2', recursive=False).text
-    info = pub.find('table').find('tbody')
-    authors = []
-    abstract = ""
-    year = ""
-    url = ""
-    volume = ""
-    pages = ""
-    journal = ""
-    doi = ""
-    issue = ""
-    journal_abbr = ""
-    for item in info.find_all('tr', recursive=False):
-        if item.find("th").text=="Author":
-            authors.append(item.find("td").text)
-        elif item.find("th").text=="Abstract":
-            abstract = item.find("td").text
-        elif item.find("th").text=="Date":
-            date = item.find("td").text
-            date = re.split(' |/|-', date)
-            print(date)
-            for x in date:
-                if len(x)==4 and x.isdigit():
-                    year = x
-        elif item.find("th").text=="URL":
-            url = item.find("td").text        
-        elif item.find("th").text=="Volume":
-            volume = item.find("td").text        
-        elif item.find("th").text=="Pages":
-            pages = item.find("td").text        
-        elif item.find("th").text=="Publication":
-            journal = item.find("td").text
-        elif item.find("th").text=="DOI":
-            doi = item.find("td").text
-        elif item.find("th").text=="Issue":
-            issue = item.find("td").text
-        elif item.find("th").text=="Journal Abbr":
-            journal_abbr = item.find("td").text
-    try:
-        img = pub.find_all('ul', class_="notes")[0].find('img')["src"]
-    except:
-        img = ""
+    pub_parser_ = PubParser(pub)
     pub_html = """
         <div class="col-sm-12">
           <div class="service-box">
@@ -169,7 +128,7 @@ for pub in publications:
             </div>
           </div>
         </div>
-    """.format(img, ", ".join(authors)+". "+title+". "+journal_abbr+" "+volume+", "+pages+" ("+year+"). doi: <a href='http://doi.org/"+doi+"'><u>"+doi+"</u></a>" )
+    """.format(pub_parser_.get_img_src(), pub_parser_.get_citation_formatted())
     publications_html += pub_html
 
 with open(tgt_filename, "a") as tgt_file:
