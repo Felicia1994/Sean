@@ -52,9 +52,24 @@ class PubParser(object):
     def get_img_src(self):
         return self._img
 
+    def _get_authors_formatted(self):
+        authors_formatted = []
+        for name in self._authors:
+            name = name.split(" ")
+            lastname = name[-1]
+            firstname = name[0]
+            name_formatted = lastname+", "+firstname[0]+"."
+            if len(name)==3:
+                name_formatted += name[1][0]+"."
+            authors_formatted.append(name_formatted)
+        if len(authors_formatted) == 1:
+            return authors_formatted[0]
+        else:
+            return ", ".join(authors_formatted[:-1])+" & "+authors_formatted[-1]
+
     def get_citation_formatted(self):
         ans = ""
-        ans += ", ".join(self._authors)+". "
+        ans += self._get_authors_formatted()+" "
         ans += self._title+". "
         if self._has_doi:
             ans += "<i>"+self._journal_abbr+"</i> "
