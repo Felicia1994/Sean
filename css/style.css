@@ -420,7 +420,7 @@ a:hover {
 
 .navbar-b.navbar-trans .nav-link,
 .navbar-b.navbar-reduce .nav-link {
-  color: #fff;
+  color: #cc9966;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -470,7 +470,7 @@ a:hover {
 .navbar-b.navbar-trans .active > .nav-link,
 .navbar-b.navbar-trans .nav-link.show,
 .navbar-b.navbar-trans .nav-link.active {
-  color: #fff;
+  color: #cc9966;
 }
 
 .navbar-b.navbar-reduce {
@@ -1283,9 +1283,11 @@ myclick:hover {
   color: #cc9966;
 }
 
-/*
-darker: #cc9966
-lighter: #ecd9c6
-background: #fff
-font: #604020, #86592d
-*/
+
+personalization {
+  darker: #cc9966;
+  lighter: #ecd9c6;
+  background: #fff;
+  font: #604020, #86592d;
+}
+
