@@ -1,0 +1,4 @@
+python3 index_gen.py
+python3 research_page_gen.py
+python3 publications_page_gen.py
+python3 contact_page_gen.py

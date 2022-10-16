@@ -8,73 +8,15 @@ tgt_filename = "publications_page.html"
 with open(tgt_filename, "w") as tgt_file:
     pass
 
-header_html = """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Xiangyi Meng's Personal Website</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+#################### header ####################
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+header_filename = "header.html"
+with open(header_filename, "r") as header_file:
+    header_html = header_file.read()
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Theme Name: DevFolio
-    Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
-</head>
-
-<body id="page-top">
-
-  <!--/ Nav Star /-->
-  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">Xiangyi Meng</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll active" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="research_page.html">Research</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="publications_page.html">Publications</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!--/ Nav End /-->
-
+header_html += """
   <div id="content"><br><br><br><br><br></div>
 
-  <!--/ Section Services Star /-->
   <section class="services-mf route">
     <div class="container">
       <div class="row">
@@ -92,13 +34,13 @@ header_html = """
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(header_html)
 
+#################### content ####################
+
 src_filename = "data/publications.html"
 with open(src_filename, "r") as src_file:
     src_html = src_file.read()
 parsed_src_html = BeautifulSoup(src_html, "lxml")
-print(type(parsed_src_html))
 publications = parsed_src_html.body.find_all('ul', recursive=False)[0].find_all('li', recursive=False)
-print(type(publications))
 publications_html = ""
 for pub in publications:
     pub_parser_ = PubParser(pub)
@@ -134,29 +76,16 @@ for pub in publications:
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(publications_html)
 
+#################### footer ####################
+
 footer_html = """
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <div id="preloader"></div>
-
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/popper/popper.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/counterup/jquery.waypoints.min.js"></script>
-  <script src="lib/counterup/jquery.counterup.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
-  <script src="lib/typed/typed.min.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
-
-</body>
-</html>
+      </div>
+    </div>
+  </section>
 """
+footer_filename = "footer.html"
+with open(footer_filename, "r") as footer_file:
+    footer_html += footer_file.read()
+
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(footer_html)
