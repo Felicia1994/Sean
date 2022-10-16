@@ -40,7 +40,7 @@ with open(tgt_filename, "a") as tgt_file:
 
 contact_html = """
         <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-6" style="text-align: center;">
             <div class="more-info">
             <ul class="list-ico">
                 <li><span class="ion-email"></span> jingma@bu.edu</li>
