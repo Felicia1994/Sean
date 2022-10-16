@@ -1,4 +1,4 @@
-Thanks for downloading this theme!
+This website is modified from the theme below:
 
 Theme Name: DevFolio
 Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
