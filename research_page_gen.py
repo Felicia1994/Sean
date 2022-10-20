@@ -96,10 +96,10 @@ for research in researches:
               </div>
               <div class="col-md-8">
                 <div class="row">
-                  <mypadding>
+                  <mypadding id = "list-{}" onclick="myClickList(this)">
                     <div class="service-content">
                       <h2 class="s-title text-center">
-                        <p id = "list-{}" onclick="myClickList(this)" class = "text-left">
+                        <p class = "text-left">
                           <myclick>{}</myclick>
                         </p>
                       </h2>
