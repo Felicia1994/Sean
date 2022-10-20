@@ -37,26 +37,26 @@ with open(tgt_filename, "a") as tgt_file:
 
 #################### content ####################
 
-researches = ["physical-netowrk", "quantum-network", "hidden-citations", "network-of-networks"]
+researches = ["physical-network", "quantum-network", "hidden-citations", "network-of-networks"]
 abstracts = {
-  "physical-netowrk": "What if a network has a shape? Using string theory, we explore the possibility of equipping a network with differential geometry, by promoting the network to a smooth manifold. We find that a minimization principle of not only the wiring length but also higher-dimensional manifold measures (such as surface area or volume) can explain some universal morphologies of biological systems that have long been observed, yet not theorized.",
-  "quantum-network": "How to efficiently distribute quantum entanglement between two or more distant nodes that are not directly linked (hence not directed entangled)? To answer this question, we need to understand the large-scale statistical behaviors of quantum networks—at a level deeper than ever before.",
-  "hidden-citations": "This is a network of not just explicit citations, but hidden citations, representing clear textual credits to a discovery without references to the publication embodying it. Case in point are Einstein's relativity, which is so embedded into scientific literacy that only rarely do manuscripts focusing on the topic explicitly cite Einstein's papers. Not only does counting hidden citations reveal the deeper connections between topics—it also reshapes our use of citations for scientific credit allocation.",
+  "physical-network": "What if a network has a shape? Using string theory, we explore the possibility of equipping a network with differential geometry, by promoting the network to a smooth <b>manifold</b>. We find that a minimization principle of not only the wiring length but also higher-dimensional manifold measures (such as surface area or volume) can explain some universal morphologies of biological systems that have long been observed, yet not theorized.",
+  "quantum-network": "How to efficiently distribute <b>quantum entanglement</b> between two or more distant nodes that are not directly linked (hence not directed entangled)? To answer this question, we need to understand the large-scale statistical behaviors of quantum networks—at a level deeper than ever before.",
+  "hidden-citations": "This is a network of not just explicit citations, but <b>hidden citations</b>, representing clear textual credits to a discovery without references to the publication embodying it. Case in point are Einstein's relativity, which is so embedded into scientific literacy that only rarely do manuscripts focusing on the topic explicitly cite Einstein's papers. Not only does counting hidden citations reveal the deeper connections between topics—it also reshapes our use of citations for scientific credit allocation.",
   "network-of-networks": "A network of networks contains multiple layers, each layer representing a network that is interdependent to other layers through bridge nodes and links. We are interested in the structual and dynamical behaviors of such a network of networks, analyzing them using a rich set of tools—from percolation theories to dynamical equations."
 }
 pub_to_research = {
   'item_HS96VU6P': "quantum-network",
-  'item_L8HSNSEA': "physical-netowrk",
+  'item_L8HSNSEA': "physical-network",
   'item_NM95Z499': "network-of-networks", 
   'item_HPDK479Z': "quantum-network", 
-  'item_6N9H8GZW': "physical-netowrk", 
+  'item_6N9H8GZW': "physical-network", 
   'item_WC3PN7L8': "network-of-networks", 
   'item_7V74V6WV': "hidden-citations", 
   'item_KDXTSH8I': "network-of-networks", 
-  'item_7B328GW2': "physical-netowrk", 
+  'item_7B328GW2': "physical-network", 
   'item_84BVHFZW': "hidden-citations", 
   'item_NSJ6YJKV': "hidden-citations", 
-  'item_BZ3L8MBM': "physical-netowrk", 
+  'item_BZ3L8MBM': "physical-network", 
   'item_9DHTWDZJ': "network-of-networks", 
   'item_5HI2GD8D': ""
 }
