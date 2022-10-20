@@ -2,6 +2,7 @@ import re
 
 class PubParser(object):
     def __init__(self, pub):
+        self._id = pub.get("id")
         self._title = pub.find('h2', recursive=False).text
         self._info = pub.find('table').find('tbody')
         self._authors = []
@@ -49,6 +50,12 @@ class PubParser(object):
         except:
             self._img = ""
 
+    def get_id(self):
+        return self._id
+
+    def get_title(self):
+        return self._title
+
     def get_img_src(self):
         return self._img
 
@@ -72,7 +79,7 @@ class PubParser(object):
         ans += self._get_authors_formatted()+" "
         ans += self._title+". "
         if self._has_doi:
-            ans += "<i>"+self._journal_abbr+"</i> "
+            ans += "<i>"+self._journal+"</i> "
             ans += "<b>"+self._volume+"</b>, "
             ans += self._pages+" "
         else:

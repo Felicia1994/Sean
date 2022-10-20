@@ -41,10 +41,15 @@ with open(src_filename, "r") as src_file:
     src_html = src_file.read()
 parsed_src_html = BeautifulSoup(src_html, "lxml")
 publications = parsed_src_html.body.find_all('ul', recursive=False)[0].find_all('li', recursive=False)
+def get_date(pub):
+  _pub_parser = PubParser(pub)
+  return _pub_parser._year
+publications = sorted(publications, key=get_date, reverse=True)
 publications_html = ""
 for pub in publications:
-    pub_parser_ = PubParser(pub)
+    _pub_parser = PubParser(pub)
     pub_html = """
+        <span id="{}"></span>
         <div class="col-sm-12">
           <div class="service-box">
             <div class="row">
@@ -70,7 +75,7 @@ for pub in publications:
             </div>
           </div>
         </div>
-    """.format(pub_parser_.get_img_src(), pub_parser_.get_citation_formatted())
+    """.format(_pub_parser.get_id(), _pub_parser.get_img_src(), _pub_parser.get_citation_formatted())
     publications_html += pub_html
 
 with open(tgt_filename, "a") as tgt_file:

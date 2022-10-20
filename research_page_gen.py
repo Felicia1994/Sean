@@ -2,6 +2,7 @@ try:
     from BeautifulSoup import BeautifulSoup
 except ImportError:
     from bs4 import BeautifulSoup
+import re
 from pub_parser import PubParser
 
 tgt_filename = "research_page.html"
@@ -36,7 +37,51 @@ with open(tgt_filename, "a") as tgt_file:
 
 #################### content ####################
 
-research_html = """
+researches = ["physical-netowrk", "quantum-network", "hidden-citations", "network-of-networks"]
+abstracts = {
+  "physical-netowrk": "What if a network has a shape? Using string theory, we explore the possibility of equipping a network with differential geometry, by promoting the network to a smooth manifold. We find that a minimization principle of not only the wiring length but also higher-dimensional manifold measures (such as surface area or volume) can explain some universal morphologies of biological systems that have long been observed, yet not theorized.",
+  "quantum-network": "How to efficiently distribute quantum entanglement between two or more distant nodes that are not directly linked (hence not directed entangled)? To answer this question, we need to understand the large-scale statistical behaviors of quantum networks—at a level deeper than ever before.",
+  "hidden-citations": "This is a network of not just explicit citations, but hidden citations, representing clear textual credits to a discovery without references to the publication embodying it. Case in point are Einstein's relativity, which is so embedded into scientific literacy that only rarely do manuscripts focusing on the topic explicitly cite Einstein's papers. Not only does counting hidden citations reveal the deeper connections between topics—it also reshapes our use of citations for scientific credit allocation.",
+  "network-of-networks": "A network of networks contains multiple layers, each layer representing a network that is interdependent to other layers through bridge nodes and links. We are interested in the structual and dynamical behaviors of such a network of networks, analyzing them using a rich set of tools—from percolation theories to dynamical equations."
+}
+pub_to_research = {
+  'item_HS96VU6P': "quantum-network",
+  'item_L8HSNSEA': "physical-netowrk",
+  'item_NM95Z499': "network-of-networks", 
+  'item_HPDK479Z': "quantum-network", 
+  'item_6N9H8GZW': "physical-netowrk", 
+  'item_WC3PN7L8': "network-of-networks", 
+  'item_7V74V6WV': "hidden-citations", 
+  'item_KDXTSH8I': "network-of-networks", 
+  'item_7B328GW2': "physical-netowrk", 
+  'item_84BVHFZW': "hidden-citations", 
+  'item_NSJ6YJKV': "hidden-citations", 
+  'item_BZ3L8MBM': "physical-netowrk", 
+  'item_9DHTWDZJ': "network-of-networks", 
+  'item_5HI2GD8D': ""
+}
+
+src_filename = "data/publications.html"
+with open(src_filename, "r") as src_file:
+    src_html = src_file.read()
+parsed_src_html = BeautifulSoup(src_html, "lxml")
+publications = parsed_src_html.body.find_all('ul', recursive=False)[0].find_all('li', recursive=False)
+def get_date(pub):
+  _pub_parser = PubParser(pub)
+  return _pub_parser._year
+publications = sorted(publications, key=get_date, reverse=True)
+
+def get_pubs(research):
+  ans = ""
+  for pub in publications:
+    _pub_parser = PubParser(pub)
+    if pub_to_research[_pub_parser.get_id()] == research:
+      ans += "<li><a href = 'publications_page.html#{}' target='_blank'>{}</a></li>".format(_pub_parser.get_id(), _pub_parser.get_title())
+  return ans
+
+researches_html = ""
+for research in researches:
+  research_html = """
         <div class="col-sm-12">
           <div class="service-box">
             <div class="row">
@@ -54,107 +99,12 @@ research_html = """
                   <mypadding>
                     <div class="service-content">
                       <h2 class="s-title text-center">
-                        <p id = "list-physical-network" onclick="myClickList(this)" class = "text-left">
-                          <myclick>PHYSICAL NETWORK</myclick>
-                        </p>
-                      </h2>
-                    </div>
-                  </mypadding>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <mypadding>
-                    <div class="service-content">
-                      <ul id="ullist-physical-network" style="display: none;">
-                        <li><a href = "publications.html#1">Quantum spatial-periodic harmonic model for daily price-limited stock markets.</a></li>
-                        <li><a href = "/exampleFolder/file2.txt">List Item 2</a></li>
-                        <li><a href = "/exampleFolder/file3.txt">List Item 3</a></li>
-                        <li><a href = "/exampleFolder/file4.txt">List Item 4</a></li>
-                        <li><a href = "/exampleFolder/file5.txt">List Item 5</a></li>
-                      </ul>
-                    </div>
-                  </mypadding>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12">
-          <div class="service-box">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="row">
-                  <mypadding>
-                    <div class="about-img">
-                      <img src="img/Sean.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                    </div>
-                  </mypadding>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="row">
-                  <mypadding>
-                    <div class="service-content">
-                      <h2 class="s-title">
-                        <p id = "list-quantum-network" onclick = "myClickList(this)" class = "text-left">
-                          <myclick>QUANTUM NETWORK</myclick>
-                        </p>
-                      </h2>
-                    </div>
-                  </mypadding>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <mypadding>
-                    <div class="service-content">
-                      <br>
-                      <ul id="ullist-quantum-network" style="display: none;">
-                        <li><a href = "/exampleFolder/file1.txt">List Item 1</a></li>
-                        <li><a href = "/exampleFolder/file2.txt">List Item 2</a></li>
-                        <li><a href = "/exampleFolder/file3.txt">List Item 3</a></li>
-                        <li><a href = "/exampleFolder/file4.txt">List Item 4</a></li>
-                        <li><a href = "/exampleFolder/file5.txt">List Item 5</a></li>
-                      </ul>
-                    </div>
-                  </mypadding>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12">
-          <div class="service-box">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="row">
-                  <mypadding>
-                    <div class="about-img">
-                      <img src="img/Sean.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                    </div>
-                  </mypadding>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="row">
-                  <mypadding>
-                    <div class="service-content">
-                      <h2 class="s-title">
-                        <p id = "list-citation-network" onclick = "myClickList(this)" class = "text-left">
-                          <myclick>CITATION NETWORK</myclick>
+                        <p id = "list-{}" onclick="myClickList(this)" class = "text-left">
+                          <myclick>{}</myclick>
                         </p>
                       </h2>
                       <p>
-                        This is a network of not just explicit citations,
-                        but hidden citations—representing clear textual credits to a discovery
-                        without references to the publication embodying it.
-                        Case in point are Einstein's relativity,
-                        which is so embedded into scientific literacy
-                        that only rarely do manuscripts focusing on the topic
-                        explicitly cite Einstein's papers.
+                        {}
                       </p>
                     </div>
                   </mypadding>
@@ -164,13 +114,8 @@ research_html = """
                 <div class="row">
                   <mypadding>
                     <div class="service-content">
-                      <br>
-                      <ul id="ullist-citation-network" style="display: none;">
-                        <li><a href = "/exampleFolder/file1.txt">List Item 1</a></li>
-                        <li><a href = "/exampleFolder/file2.txt">List Item 2</a></li>
-                        <li><a href = "/exampleFolder/file3.txt">List Item 3</a></li>
-                        <li><a href = "/exampleFolder/file4.txt">List Item 4</a></li>
-                        <li><a href = "/exampleFolder/file5.txt">List Item 5</a></li>
+                      <ul id="ullist-{}" style="display: none;">
+                        {}
                       </ul>
                     </div>
                   </mypadding>
@@ -179,10 +124,11 @@ research_html = """
             </div>
           </div>
         </div>
-"""
+  """.format(research, " ".join(research.split("-")).upper(), abstracts[research], research, get_pubs(research))
+  researches_html += research_html
 
 with open(tgt_filename, "a") as tgt_file:
-    tgt_file.write(research_html)
+    tgt_file.write(researches_html)
 
 #################### footer ####################
 
