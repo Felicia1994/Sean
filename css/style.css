@@ -1279,11 +1279,10 @@ mypadding {
   margin-bottom: 15px;
 }
 
-myclick:hover {
+/* myclick:hover {
   color: #cc9966;
-  cursor: pointer;
-}
-
+  cursor: zoom-in;
+} */
 
 personalization {
   darker: #cc9966;

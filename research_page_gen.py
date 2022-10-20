@@ -96,16 +96,18 @@ for research in researches:
               </div>
               <div class="col-md-8">
                 <div class="row">
-                  <mypadding id = "list-{}" onclick="myClickList(this)">
-                    <div class="service-content">
-                      <h2 class="s-title text-center">
-                        <p class = "text-left">
-                          <myclick>{}</myclick>
+                  <mypadding>
+                    <div id = "list-{}" style='cursor: zoom-in;' onclick="myClickList(this)">
+                      <div class="service-content">
+                        <h2 class="s-title text-center">
+                          <p class = "text-left">
+                            {}
+                          </p>
+                        </h2>
+                        <p>
+                          {}
                         </p>
-                      </h2>
-                      <p>
-                        {}
-                      </p>
+                      </div>
                     </div>
                   </mypadding>
                 </div>

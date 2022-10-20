@@ -132,7 +132,9 @@ function myClickList(myButton) {
 
     if (list.style.display == "none"){
         list.style.display = "block";
+        myButton.style.cursor = "zoom-out";
     }else{
         list.style.display = "none";
+        myButton.style.cursor = "zoom-in";
     }
 }
