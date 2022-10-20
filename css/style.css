@@ -1272,6 +1272,10 @@ footer .credits a {
 
 /******************/
 
+html {
+  scroll-padding-top: 12vw; /* height of sticky header */
+}
+
 mypadding {
   margin-left: 30px;
   margin-right: 30px;

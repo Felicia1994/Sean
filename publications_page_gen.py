@@ -49,8 +49,7 @@ publications_html = ""
 for pub in publications:
     _pub_parser = PubParser(pub)
     pub_html = """
-        <span id="{}"></span>
-        <div class="col-sm-12">
+        <div id="{}" class="col-sm-12">
           <div class="service-box">
             <div class="row">
               <div class="col-md-1"></div>
