@@ -76,7 +76,7 @@ def get_pubs(research):
   for pub in publications:
     _pub_parser = PubParser(pub)
     if pub_to_research[_pub_parser.get_id()] == research:
-      ans += "<li><a href = 'publications_page.html#{}' target='_blank'>{}</a></li>".format(_pub_parser.get_id(), _pub_parser.get_title())
+      ans += "<li><a href='publications_page.html#{}' target='_blank' style='cursor: zoom-in;'>{}</a></li>".format(_pub_parser.get_id(), _pub_parser.get_title())
   return ans
 
 researches_html = ""
