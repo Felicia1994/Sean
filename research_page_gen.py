@@ -89,7 +89,7 @@ for research in researches:
                 <div class="row">
                   <mypadding>
                     <div class="about-img">
-                      <img src="img/Sean.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                      <img src="img/{}.png" class="img-fluid rounded b-shadow-a" alt="">
                     </div>
                   </mypadding>
                 </div>
@@ -124,7 +124,7 @@ for research in researches:
             </div>
           </div>
         </div>
-  """.format(research, " ".join(research.split("-")).upper(), abstracts[research], research, get_pubs(research))
+  """.format(research, research, " ".join(research.split("-")).upper(), abstracts[research], research, get_pubs(research))
   researches_html += research_html
 
 with open(tgt_filename, "a") as tgt_file:

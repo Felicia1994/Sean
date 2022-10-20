@@ -45,7 +45,7 @@ index_html = """
         <div class="col-sm-12">
           <div class="box-shadow-full">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-5">
                 <div class="row">
                   <div class="col-sm-10 col-md-10">
                     <div class="about-img">
@@ -54,7 +54,7 @@ index_html = """
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-7">
                 <div class="about-me pt-4 pt-md-0">
                   <div class="title-box-2">
                     <h5 class="title-left">
@@ -62,7 +62,45 @@ index_html = """
                     </h5>
                   </div>
                   <p class="lead">
-                    The physics of network, or the network of physics?
+                    "The physics of network, or the network of physics?" This rhetorical question rightly conveys my dedication—to understand the interplay between network science and statistical/quantum physics.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="about-me pt-4 pt-md-0">
+                  <p>
+                    Xiangyi Meng, Postdoctorate
+                  </p>
+                  <p>
+                    Center for Complex Network Research
+                  </p>
+                  <p>                    
+                    Northeastern University
+                  </p>
+                  <p>
+                    177 Huntington Avenue, Floor 11
+                  </p>
+                  <p>
+                    Boston, MA 02115, USA
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="about-me pt-4 pt-md-0">
+                  <p class="lead">
+                    My research focus: 
+                  </p>
+                  <p class="lead">
+                    physical networks (and their connection to string theory), 
+                  </p>
+                  <p class="lead">                    
+                    quantum networks,
+                  </p>
+                  <p class="lead">
+                    statistical physics of complex networks, 
+                  </p>
+                  <p class="lead">
+                    open quantum field theories.
                   </p>
                 </div>
               </div>
