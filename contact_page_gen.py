@@ -42,19 +42,18 @@ contact_html = """
         <div class="col-md-3"></div>
         <div class="col-md-6" style="text-align: center;">
             <div class="more-info">
-            <ul class="list-ico">
-                <li><span class="ion-email"></span> jingma@bu.edu</li>
-                <li><span class="ion-ios-telephone"></span> (617) 902-8536</li>
-                <!-- <li><span class="ion-ios-location"></span> 590 Commonwealth Avenue, Boston, MA 02135</li> -->
-            </ul>
+              <ul class="list-ico">
+                  <li><span class="ion-email"></span> x.meng@neu.edu </li>
+                  <!-- <li><span class="ion-ios-telephone"></span> (617) 902-8536</li> -->
+                  <!-- <li><span class="ion-ios-location"></span> 590 Commonwealth Avenue, Boston, MA 02135</li> -->
+              </ul>
             </div>
             <div class="socials">
-            <ul>
-                <li><a href="https://www.facebook.com/profile.php?id=100004399845713" target="_blank"><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
-                <li><a href="https://www.linkedin.com/in/jing-ma-b3a077103/" target="_blank"><span class="ico-circle"><i class="ion-social-rss"></i></span></a></li>
-                <li><a href="https://www.researchgate.net/profile/Xiangyi-Meng-2" target="_blank"><span class="ico-circle"><i class="ion-social-reddit"></i></span></a></li>
+              <ul>
                 <li><a href="https://scholar.google.com/citations?user=WpxQwZUAAAAJ&hl=en" target="_blank"><span class="ico-circle"><i class="ion-social-google"></i></span></a></li>
-            </ul>
+                <li><a href="https://www.zotero.org/xiangyi_meng" target="_blank"><span class="ico-circle"><i class="ion-ios-paper-outline"></i></span></a></li>
+                <li><a href="https://www.researchgate.net/profile/Xiangyi-Meng-2" target="_blank"><span class="ico-circle"><i class="ion-ios-paper"></i></span></a></li>
+              </ul>
             </div>
         </div>
         <div class="col-md-3"></div>
