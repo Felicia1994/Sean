@@ -63,10 +63,14 @@ with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(contact_html)
 
 #################### footer ####################
-
+footer_html = """
+      </div>
+    </div>
+  </section>
+"""
 footer_filename = "footer.html"
 with open(footer_filename, "r") as footer_file:
-    footer_html = footer_file.read()
+    footer_html += footer_file.read()
 
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(footer_html)

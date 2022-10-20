@@ -1281,6 +1281,7 @@ mypadding {
 
 myclick:hover {
   color: #cc9966;
+  cursor: pointer;
 }
 
 
