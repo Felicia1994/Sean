@@ -62,6 +62,25 @@ contact_html = """
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(contact_html)
 
+maps_html = """
+        <div class="col-sm-12">
+          <div class="service-box">
+            <div class="row">
+              <div class="col-md-12" style="text-align: center;">
+"""
+maps_filename = "data/maps.html"
+with open(maps_filename, "r") as maps_file:
+    maps_html += maps_file.read()
+maps_html += """
+              </div>
+            </div>
+          </div>
+        </div>
+"""
+
+with open(tgt_filename, "a") as tgt_file:
+    tgt_file.write(maps_html)
+
 #################### footer ####################
 footer_html = """
       </div>
