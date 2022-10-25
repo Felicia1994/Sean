@@ -44,21 +44,11 @@ abstracts = {
   "hidden-citations": "This is a network of not just explicit citations, but <b>hidden citations</b>, representing clear textual credits to a discovery without references to the publication embodying it. Case in point are Einstein's relativity, which is so embedded into scientific literacy that only rarely do manuscripts focusing on the topic explicitly cite Einstein's papers. Not only does counting hidden citations reveal the deeper connections between topics—it also reshapes our use of citations for scientific credit allocation.",
   "network-of-networks": "A network of networks contains multiple layers, each layer representing a network that is interdependent to other layers through bridge nodes and links. We are interested in the structual and dynamical behaviors of such a network of networks, analyzing them using a rich set of tools—from percolation theories to dynamical equations."
 }
-pub_to_research = {
-  'item_HS96VU6P': "quantum-network",
-  'item_L8HSNSEA': "physical-network",
-  'item_NM95Z499': "network-of-networks", 
-  'item_HPDK479Z': "quantum-network", 
-  'item_6N9H8GZW': "physical-network", 
-  'item_WC3PN7L8': "network-of-networks", 
-  'item_7V74V6WV': "hidden-citations", 
-  'item_KDXTSH8I': "network-of-networks", 
-  'item_7B328GW2': "physical-network", 
-  'item_84BVHFZW': "hidden-citations", 
-  'item_NSJ6YJKV': "hidden-citations", 
-  'item_BZ3L8MBM': "physical-network", 
-  'item_9DHTWDZJ': "network-of-networks", 
-  'item_5HI2GD8D': ""
+research_to_label = {
+  "quantum-network": "quantum-network",
+  "physical-network": "",
+  "network-of-networks": "network-of-network", 
+  "hidden-citations": ""
 }
 
 src_filename = "data/publications.html"
@@ -75,7 +65,7 @@ def get_pubs(research):
   ans = ""
   for pub in publications:
     _pub_parser = PubParser(pub)
-    label = research # a mapping could be added here
+    label = research_to_label[research]
     if label in _pub_parser.get_labels():
       ans += "<li><a href='publications_page.html#{}' target='_blank' style='cursor: zoom-in;'>{}</a></li>".format(_pub_parser.get_id(), _pub_parser.get_title())
   return ans
