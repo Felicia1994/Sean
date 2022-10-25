@@ -68,14 +68,15 @@ parsed_src_html = BeautifulSoup(src_html, "lxml")
 publications = parsed_src_html.body.find_all('ul', recursive=False)[0].find_all('li', recursive=False)
 def get_date(pub):
   _pub_parser = PubParser(pub)
-  return _pub_parser._year
+  return _pub_parser.get_date()
 publications = sorted(publications, key=get_date, reverse=True)
 
 def get_pubs(research):
   ans = ""
   for pub in publications:
     _pub_parser = PubParser(pub)
-    if pub_to_research[_pub_parser.get_id()] == research:
+    label = research # a mapping could be added here
+    if label in _pub_parser.get_labels():
       ans += "<li><a href='publications_page.html#{}' target='_blank' style='cursor: zoom-in;'>{}</a></li>".format(_pub_parser.get_id(), _pub_parser.get_title())
   return ans
 

@@ -8,6 +8,8 @@ class PubParser(object):
         self._authors = []
         self._abstract = ""
         self._year = ""
+        self._month = ""
+        self._day = ""
         self._url = ""
         self._volume = ""
         self._pages = ""
@@ -23,10 +25,14 @@ class PubParser(object):
                 self._abstract = item.find("td").text
             elif item.find("th").text=="Date":
                 date = item.find("td").text
-                date = re.split(' |/|-', date)
-                for x in date:
-                    if len(x)==4 and x.isdigit():
-                        self._year = x
+                date = re.split('-', date)
+                self._year = date[0]
+                self._month = date[1]
+                self._day = date[2]
+                # date = re.split(' |/|-', date)
+                # for x in date:
+                #     if len(x)==4 and x.isdigit():
+                #         self._year = x
             elif item.find("th").text=="URL":
                 self._url = item.find("td").text        
             elif item.find("th").text=="Volume":
@@ -45,6 +51,13 @@ class PubParser(object):
                 self._issue = item.find("td").text
             elif item.find("th").text=="Journal Abbr":
                 self._journal_abbr = item.find("td").text
+        self._labels = []
+        try:
+            for item in pub.find_all('ul', class_="tags")[0].find_all('li'):
+                label = item.text.lower()
+                self._labels.append('-'.join(label.split()))
+        except:
+            pass
         try:
             self._img = pub.find_all('ul', class_="notes")[0].find('img')["src"]
         except:
@@ -55,6 +68,12 @@ class PubParser(object):
 
     def get_title(self):
         return self._title
+
+    def get_date(self):
+        return self._year + self._month + self._day
+
+    def get_labels(self):
+        return self._labels
 
     def get_img_src(self):
         return self._img

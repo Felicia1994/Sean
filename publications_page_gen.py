@@ -43,7 +43,7 @@ parsed_src_html = BeautifulSoup(src_html, "lxml")
 publications = parsed_src_html.body.find_all('ul', recursive=False)[0].find_all('li', recursive=False)
 def get_date(pub):
   _pub_parser = PubParser(pub)
-  return _pub_parser._year
+  return _pub_parser.get_date()
 publications = sorted(publications, key=get_date, reverse=True)
 publications_html = ""
 for pub in publications:
