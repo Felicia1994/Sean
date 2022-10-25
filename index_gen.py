@@ -16,7 +16,7 @@ with open(header_filename, "r") as header_file:
 
 header_html += """
   <!--/ Intro Skew Start /-->
-  <div id="home" class="intro route bg-image" style="background-image: url(img/Sean.jpg)">
+  <div id="home" class="intro route bg-image" style="background-image: url(img/hidden-citations.png)">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
