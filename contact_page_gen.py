@@ -43,7 +43,7 @@ contact_html = """
         <div class="col-md-6" style="text-align: center;">
             <div class="more-info">
               <ul class="list-ico">
-                  <li><span class="ion-email"></span> x.meng@neu.edu </li>
+                  <li><span class="ion-email"></span> xm@northwestern.edu </li>
                   <!-- <li><span class="ion-ios-telephone"></span> (617) 902-8536</li> -->
                   <!-- <li><span class="ion-ios-location"></span> 590 Commonwealth Avenue, Boston, MA 02135</li> -->
               </ul>
