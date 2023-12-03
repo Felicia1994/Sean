@@ -28,7 +28,7 @@ class PubParser(object):
                 date = re.split('-', date)
                 self._year = date[0]
                 self._month = date[1]
-                self._day = date[2]
+                self._day = date[2] if len(date) >= 3 else "1"
                 # date = re.split(' |/|-', date)
                 # for x in date:
                 #     if len(x)==4 and x.isdigit():
