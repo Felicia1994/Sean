@@ -1289,11 +1289,11 @@ mypadding {
 } */
 
 :root {
-  --darker: #cc9966;
-  --lighter: #ecd9c6;
+  --darker: #a36565;
+  --lighter: #fff;
   --background: #fff;
   --shaded-background: #f5f5f5;
-  --font-darker: #604020;
-  --font-lighter: #86592d;
+  --font-darker: #a36565;
+  --font-lighter: #000;
 }
 
