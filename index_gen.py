@@ -33,7 +33,7 @@ with open(header_filename, "r") as header_file:
 # """
 
 header_html += """
-  <h1 class="intro-title mb-4">孟祥一<br>Xiangyi Meng</h1>
+  <br><br><br>
 """
 
 header_html += """
