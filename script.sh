@@ -1,4 +1,5 @@
 ipython3 index_gen.py
 ipython3 research_page_gen.py
 ipython3 publications_page_gen.py
+ipython3 publications_compact_page_gen.py
 ipython3 contact_page_gen.py

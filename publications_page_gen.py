@@ -26,6 +26,8 @@ header_html += """
               Publications
             </h3>
             <div class="line-mf"></div>
+            <br>
+            <a href="publications_compact_page.html">jump to compact version</a>
           </div>
         </div>
       </div>
