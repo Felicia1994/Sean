@@ -27,7 +27,9 @@ header_html += """
             </h3>
             <div class="line-mf"></div>
             <br>
-            <a href="publications_compact_page.html">jump to compact version</a>
+            <h6 align="right">
+              view: <b>with preview</b> | <a href="publications_compact_page.html"><u>full list</u></a>
+            </h6>
           </div>
         </div>
       </div>
