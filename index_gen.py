@@ -64,7 +64,8 @@ index_html = """
                 <div class="about-me pt-4 pt-md-0">
                   <div class="title-box-2">
                     <h5 class="title-left">
-                      PHYSICS X NETWORK
+                      <span class=special-x>X</span>-Meng Lab:
+                      Physics <span class=special-x>X</span> Network
                     </h5>
                   </div>
                   <p class="lead">
