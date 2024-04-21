@@ -12,6 +12,9 @@
 body {
   background-color: var(--shaded-background);
   color: var(--font-lighter);
+  /* font-family:'Trebuchet MS'; */
+  font-family:'Times New Roman';
+  /* font-family:'Verdana',serif; */
 }
 
 h1,
@@ -422,7 +425,7 @@ a:hover {
 .navbar-b.navbar-reduce .nav-link {
   color: var(--darker);
   text-transform: uppercase;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .navbar-b.navbar-trans .nav-link:before,
@@ -510,7 +513,7 @@ a:hover {
 .navbar-b .navbar-brand {
   color: var(--darker);
   font-size: 1.6rem;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .navbar-b .navbar-nav .dropdown-item.show .dropdown-menu,
