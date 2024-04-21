@@ -1288,12 +1288,17 @@ mypadding {
   cursor: zoom-in;
 } */
 
+.special-x {
+  font-family: 'Freestyle Script', sans-serif;
+  font-size: 1.5em;
+}
+
 :root {
-  --darker: #a36565;
+  --darker: #ab2328;
   --lighter: #fff;
   --background: #fff;
   --shaded-background: #f5f5f5;
-  --font-darker: #a36565;
+  --font-darker: #ab2328;
   --font-lighter: #000;
 }
 
