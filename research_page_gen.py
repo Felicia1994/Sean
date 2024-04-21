@@ -37,7 +37,8 @@ with open(tgt_filename, "a") as tgt_file:
 
 #################### content ####################
 
-researches = ["physical-network", "quantum-network", "hidden-citations", "network-of-networks"]
+# researches = ["physical-network", "quantum-network", "hidden-citations", "network-of-networks"]
+researches = ["quantum-network", "physical-network", "network-of-networks"]
 abstracts = {
   "physical-network": "What if a network has a shape? Using string theory, we explore the possibility of equipping a network with differential geometry, making the network a smooth <b>manifold</b>. We find that a minimization principle of not only the wiring length but also higher-dimensional manifold measures (such as surface area or volume) can explain some universal morphologies of biological systems that have long been observed, yet not theorized.",
   "quantum-network": "How to efficiently distribute <b>quantum entanglement</b> between two or more distant nodes that are not directly linked (hence not directed entangled)? To answer this question, we need to understand the large-scale statistical behaviors of quantum networks—at a level deeper than ever before.",
