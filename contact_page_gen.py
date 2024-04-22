@@ -62,16 +62,39 @@ contact_html = """
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(contact_html)
 
+# embeded google maps: too slow
+# maps_html = """
+#         <div class="col-sm-12">
+#           <div class="service-box">
+#             <div class="row">
+#               <div class="col-md-12" style="text-align: center;">
+# """
+# maps_filename = "data/maps.html"
+# with open(maps_filename, "r") as maps_file:
+#     maps_html += maps_file.read()
+# maps_html += """
+#               </div>
+#             </div>
+#           </div>
+#         </div>
+# """
+
+# google maps screenshot
 maps_html = """
         <div class="col-sm-12">
           <div class="service-box">
             <div class="row">
               <div class="col-md-12" style="text-align: center;">
+                <a href="
+
 """
 maps_filename = "data/maps.html"
 with open(maps_filename, "r") as maps_file:
-    maps_html += maps_file.read()
+    maps_html += BeautifulSoup(maps_file.read(), 'html.parser').find_all('iframe')[0]['src']
 maps_html += """
+                " target="_blank">
+                  <img title="click for the interactive view" src="img/google_maps.jpg" alt="Google Maps" style="width:42px;height:42px;">
+                </a>
               </div>
             </div>
           </div>
