@@ -93,7 +93,7 @@ with open(maps_filename, "r") as maps_file:
     maps_html += BeautifulSoup(maps_file.read(), 'html.parser').find_all('iframe')[0]['src']
 maps_html += """
                 " target="_blank">
-                  <img title="click for the interactive view" src="img/google_maps.jpg" alt="Google Maps" style="width:42px;height:42px;">
+                  <img title="click for the interactive view" src="img/google_maps.png" alt="Google Maps" style="width:840px;height:512px;">
                 </a>
               </div>
             </div>
