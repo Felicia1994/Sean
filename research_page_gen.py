@@ -79,16 +79,16 @@ for research in researches:
             <div class="row">
               <div class="col-md-4">
                 <div class="row">
-                  <mypadding>
+                  <wide-padding>
                     <div class="about-img">
                       <img src="img/{}.png" class="img-fluid rounded b-shadow-a" alt="">
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
               <div class="col-md-8">
                 <div class="row">
-                  <mypadding>
+                  <wide-padding>
                     <div id = "list-{}" style='cursor: zoom-in;' onclick="myClickList(this)">
                       <div class="service-content">
                         <h2 class="s-title text-center">
@@ -101,18 +101,18 @@ for research in researches:
                         </p>
                       </div>
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="row">
-                  <mypadding>
+                  <wide-padding>
                     <div class="service-content">
                       <ul id="ullist-{}" style="display: none;">
                         {}
                       </ul>
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
             </div>

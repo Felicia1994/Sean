@@ -4,6 +4,7 @@ except ImportError:
     from bs4 import BeautifulSoup
 import re
 from pub_parser import PubParser
+import csv
 
 tgt_filename = "people_page.html"
 with open(tgt_filename, "w") as tgt_file:
@@ -44,7 +45,7 @@ open_positions_html = """
             <div class="row">
               <div class="col-md-12">
                 <div class="row">
-                  <mypadding>
+                  <narrow-padding>
                     <div id = "open-positions" style='cursor: zoom-in;' onclick="myClickExpand(this)">
                       <div class="service-content">
                         <h2 class="s-title text-center">
@@ -54,12 +55,12 @@ open_positions_html = """
                         </h2>
                       </div>
                     </div>
-                  </mypadding>
+                  </narrow-padding>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="row">
-                  <mypadding>
+                  <wide-padding>
                     <div class="service-content">
                       <div id="expand-open-positions" style="display: none;">
                         <p><b>Postdoctoral Researchers:</b></p>
@@ -96,7 +97,7 @@ open_positions_html = """
                         </p>
                       </div>
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
             </div>
@@ -111,7 +112,7 @@ tips_html = """
             <div class="row">
               <div class="col-md-12">
                 <div class="row">
-                  <mypadding>
+                  <narrow-padding>
                     <div id = "tips" style='cursor: zoom-in;' onclick="myClickExpand(this)">
                       <div class="service-content">
                         <h2 class="s-title text-center">
@@ -121,12 +122,12 @@ tips_html = """
                         </h2>
                       </div>
                     </div>
-                  </mypadding>
+                  </narrow-padding>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="row">
-                  <mypadding>
+                  <wide-padding>
                     <div class="service-content">
                       <div id="expand-tips" style="display: none;">
                         <ol>
@@ -143,7 +144,7 @@ tips_html = """
                         </ol>
                       </div>
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
             </div>
@@ -158,8 +159,8 @@ current_members_html = """
             <div class="row">
               <div class="col-md-12">
                 <div class="row">
-                  <mypadding>
-                    <div id = "current-members" style='cursor: zoom-in;' onclick="myClickExpand(this)">
+                  <wide-padding>
+                    <div id = "current-members">
                       <div class="service-content">
                         <h2 class="s-title text-center">
                           <p class = "text-left">
@@ -171,7 +172,7 @@ current_members_html = """
                         </p>
                       </div>
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
             </div>
@@ -186,8 +187,8 @@ alumni_html = """
             <div class="row">
               <div class="col-md-12">
                 <div class="row">
-                  <mypadding>
-                    <div id = "alumni" style='cursor: zoom-in;' onclick="myClickExpand(this)">
+                  <wide-padding>
+                    <div id = "alumni">
                       <div class="service-content">
                         <h2 class="s-title text-center">
                           <p class = "text-left">
@@ -199,7 +200,7 @@ alumni_html = """
                         </p>
                       </div>
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
             </div>
@@ -208,26 +209,43 @@ alumni_html = """
 """
 people_html += alumni_html
 
+################ collaborators #################
+
 collaborators_html = """
         <div class="col-sm-12">
           <div class="service-box">
             <div class="row">
               <div class="col-md-12">
                 <div class="row">
-                  <mypadding>
-                    <div id = "collaborators" style='cursor: zoom-in;' onclick="myClickExpand(this)">
+                  <wide-padding>
+                    <div id = "collaborators">
                       <div class="service-content">
                         <h2 class="s-title text-center">
                           <p class = "text-left">
                             Key collaborators
                           </p>
                         </h2>
+"""
+
+collaborators = []
+collaborators_filename = "data/collaborators.csv"
+with open(collaborators_filename) as collaborators_file:
+  collaborators_reader = csv.reader(collaborators_file)
+  for collaborator in collaborators_reader:
+    collaborators.append(collaborator)
+collaborators.sort(key=lambda c : c[0].split()[-1])
+
+for name, affiliation in collaborators:
+  collaborators_html += """
                         <p>
-                          Jianxi
+                          {}, {}
                         </p>
+  """.format(name, affiliation)
+
+collaborators_html += """
                       </div>
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
             </div>

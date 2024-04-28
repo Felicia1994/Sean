@@ -12,7 +12,7 @@
 body {
   background-color: var(--shaded-background);
   color: var(--font-lighter);
-  font-family: var(--main-text-font);
+  font-family: var(-sans-serif-font);
 }
 
 h1,
@@ -22,10 +22,6 @@ h4,
 h5,
 h6 {
   color: var(--font-darker);
-}
-
-h3 {
-  font-family: var(--title-font);
 }
 
 a {
@@ -421,7 +417,7 @@ a:hover {
   position: relative;
   padding-right: 10px;
   padding-left: 0;
-  font-family: var(--title-font);
+  /* font-family: var(--sans-serif-font); */
 }
 
 .navbar-b.navbar-trans .nav-link,
@@ -517,7 +513,7 @@ a:hover {
   color: var(--darker);
   font-size: 1.6rem;
   /* font-weight: 600; */
-  font-family: var(--title-font);
+  /* font-family: var(--sans-serif-font); */
 }
 
 .navbar-b .navbar-nav .dropdown-item.show .dropdown-menu,
@@ -1283,7 +1279,14 @@ html {
   scroll-padding-top: 12vw; /* height of sticky header */
 }
 
-mypadding {
+narrow-padding {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 0px;
+  margin-bottom: -30px;
+}
+
+wide-padding {
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 15px;
@@ -1308,8 +1311,8 @@ mypadding {
   --font-darker: #ab2328;
   --font-lighter: #000;
 
-  /* --main-text-font:'Trebuchet MS'; */
-  --main-text-font:'Times New Roman';
-  --title-font:'Verdana',serif;  
+  /* --serif-font:'Trebuchet MS'; */
+  --serif-font:'Times New Roman';
+  --sans-serif-font:'Verdana',serif;  
 }
 

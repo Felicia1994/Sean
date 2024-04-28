@@ -33,7 +33,7 @@ header_html += """
           </div>
         </div>
       </div>
-      <div id="publications" class="row">
+      <div id="publications" class="row" style="font-family: var(--serif-font);">
 """
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(header_html)
