@@ -1293,6 +1293,11 @@ wide-padding {
   margin-bottom: 15px;
 }
 
+horizontal-padding {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
 /* myclick:hover {
   color: var(--darker);
   cursor: zoom-in;
