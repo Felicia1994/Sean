@@ -1276,7 +1276,7 @@ footer .credits a {
 /******************/
 
 html {
-  scroll-padding-top: 12vw; /* height of sticky header */
+  scroll-padding-top: 6vw; /* height of sticky header */
 }
 
 narrow-padding {
