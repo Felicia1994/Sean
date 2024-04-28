@@ -33,7 +33,7 @@ header_html += """
           </div>
         </div>
       </div>
-      <div id="publications" class="row">
+      <div id="publications" class="row" style="font-family: var(--serif-font);">
         <div id="{}" class="col-sm-12">
           <div class="service-box">
 """
@@ -70,7 +70,7 @@ for idx, pub in enumerate(publications):
               </div>
               <div class="col-md-1"></div>
             </div>
-    """.format(idx+1, _pub_parser.get_citation_formatted())
+    """.format(len(publications)-idx, _pub_parser.get_citation_formatted())
     publications_html += pub_html
 
 with open(tgt_filename, "a") as tgt_file:
