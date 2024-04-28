@@ -1,0 +1,3 @@
+Check out the brand-new website for the X-Meng Lab! (Big thanks to @Dr. Jing Ma, Google’s talented developer:) Explore our latest research on quantum networks and complex systems at https://xmeng.io
+Excited to announce the launch of the X-Meng Lab at @RPI. We study quantum networks and complex systems, utilizing @IBM’s newly launched Quantum Computer on RPI campus. Follow our journey as we explore the cutting-edge of quantum information.
+@RPI and @IBM unveil the world’s first IBM Quantum System One on a university campus. Cool.

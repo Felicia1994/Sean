@@ -38,15 +38,30 @@ with open(tgt_filename, "a") as tgt_file:
 #################### content ####################
 
 news_html = ""
-for i in range(5):
+
+news = []
+news_filename = "data/news.txt"
+for line in open(news_filename):
+  news.append(line)
+
+for new_ in news:
   new_html = """
         <div class="col-sm-12">
           <div class="service-box">
             <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <horizontal-padding>
+                    <p>
+                      {}
+                    </p>
+                  </horizontal-padding>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-  """
+  """.format(new_)
   news_html += new_html
 
 with open(tgt_filename, "a") as tgt_file:
