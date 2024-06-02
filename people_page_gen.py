@@ -151,7 +151,7 @@ tips_html = """
           </div>
         </div>
 """
-people_html += tips_html
+# people_html += tips_html
 
 current_members_html = """
         <div class="col-sm-12">
@@ -179,7 +179,7 @@ current_members_html = """
           </div>
         </div>
 """
-people_html += current_members_html
+# people_html += current_members_html
 
 alumni_html = """
         <div class="col-sm-12">
@@ -207,7 +207,7 @@ alumni_html = """
           </div>
         </div>
 """
-people_html += alumni_html
+# people_html += alumni_html
 
 ################ collaborators #################
 
