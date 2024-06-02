@@ -76,7 +76,7 @@ index_html = """
                 <div class="about-me pt-4 pt-md-0">
                   <div class="title-box-2">
                     <h5 class="title-left">
-                      <span class=special-x>X</span>-Meng Lab:
+                      <span class=special-x>X</span>-Meng Group:
                       Physics <span class=special-x>X</span> Network
                     </h5>
                   </div>
@@ -84,11 +84,11 @@ index_html = """
                     The physics of network, or the network of physics?
                   </p>
                   <p>
-                    This rhetorical question captures the interdisciplinary essence of the X-Meng lab’s mission
+                    This rhetorical question captures the interdisciplinary essence of the X-Meng Group’s mission
                     &mdash; to explore the rich interplay between network science and both statistical and quantum physics.
                   </p>
                   <p>
-                    Led by Professor X Meng, the lab’s research spans several areas:
+                    Led by Professor Xiangyi Meng, the group’s research spans several areas:
                   </p>
                   <p>
                     <ul>

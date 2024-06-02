@@ -65,7 +65,7 @@ open_positions_html = """
                       <div id="expand-open-positions" style="display: none;">
                         <p><b>Postdoctoral Researchers:</b></p>
                         <p>
-                          The X-Meng Lab within the Department of Physics, Applied Physics, and Astronomy at RPI
+                          The X-Meng Group within the Department of Physics, Applied Physics, and Astronomy at RPI
                           are actively seeking postdoctoral researchers who are strongly motivated
                           and have a robust publication record.
                           Ideal candidates will bring fresh, synergistic ideas that align with our research focus
