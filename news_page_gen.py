@@ -31,6 +31,8 @@ header_html += """
         </div>
       </div>
       <div id="news" class="row">
+        <div class="col-sm-12">
+          <div class="service-box">
 """
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(header_html)
@@ -44,24 +46,22 @@ news_filename = "data/news.txt"
 for line in open(news_filename):
   news.append(line)
 
-for new_ in news:
+for idx, news_piece in enumerate(news):
   new_html = """
-        <div class="col-sm-12">
-          <div class="service-box">
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-1">
+                <div align="right">{}</div>
+              </div>
+              <div class="col-md-10">
                 <div class="row">
-                  <horizontal-padding>
                     <p>
                       {}
                     </p>
-                  </horizontal-padding>
                 </div>
               </div>
+              <div class="col-md-1"></div>
             </div>
-          </div>
-        </div>
-  """.format(new_)
+  """.format("&#9670;", news_piece)
   news_html += new_html
 
 with open(tgt_filename, "a") as tgt_file:
@@ -70,6 +70,8 @@ with open(tgt_filename, "a") as tgt_file:
 #################### footer ####################
 
 footer_html = """
+          </div>
+        </div>
       </div>
     </div>
   </section>
