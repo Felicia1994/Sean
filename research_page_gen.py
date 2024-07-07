@@ -85,7 +85,7 @@ def get_img(research):
     """.format(img)
   if img.endswith("mp4"):
     return """
-                      <video autoplay class="img-fluid rounded b-shadow-a">
+                      <video autoplay muted loop class="img-fluid rounded b-shadow-a">
                         <source src="img/research/{}" type="video/mp4" class="img-fluid rounded b-shadow-a">
                         Your browser does not support the video tag.                    
                       </video>
