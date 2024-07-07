@@ -94,7 +94,7 @@ for research in researches:
               <div class="col-md-8">
                 <div class="row">
                   <wide-padding>
-                    <div id = "list-{}" style='cursor: zoom-in;' onclick="myClickList(this)">
+                    <div id = "list-{}">
                       <div class="service-content">
                         <h2 class="s-title text-center">
                           <p class = "text-left">
@@ -109,21 +109,10 @@ for research in researches:
                   </wide-padding>
                 </div>
               </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <wide-padding>
-                    <div class="service-content">
-                      <ul id="ullist-{}" style="display: none;">
-                        {}
-                      </ul>
-                    </div>
-                  </wide-padding>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-  """.format(research_to_img[research], research, " ".join(research.split("-")).upper(), abstracts[research], research, get_pubs(research))
+  """.format(research_to_img[research], research, " ".join(research.split("-")).upper(), abstracts[research], research)
   researches_html += research_html
 
 with open(tgt_filename, "a") as tgt_file:
