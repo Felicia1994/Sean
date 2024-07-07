@@ -57,6 +57,7 @@ research_to_img = {
   "network-of-physics": "research_3.png",
   "network-of-networks": "research_4.png",
 }
+
 src_filename = "data/publications.html"
 with open(src_filename, "r") as src_file:
     src_html = src_file.read()
@@ -76,6 +77,21 @@ def get_pubs(research):
       ans += "<li><a href='publications_page.html#{}'>{}</a></li>".format(_pub_parser.get_id(), _pub_parser.get_title())
   return ans
 
+def get_img(research):
+  img = research_to_img[research]
+  if img.endswith("png"):
+    return """
+                      <img src="img/research/{}" class="img-fluid rounded b-shadow-a" alt="">
+    """.format(img)
+  if img.endswith("mp4"):
+    return """
+                      <video autoplay class="img-fluid rounded b-shadow-a">
+                        <source src="img/research/{}" type="video/mp4" class="img-fluid rounded b-shadow-a">
+                        Your browser does not support the video tag.                    
+                      </video>
+    """.format(img)
+  return ""
+
 researches_html = ""
 for research in researches:
   research_html = """
@@ -86,7 +102,7 @@ for research in researches:
                 <div class="row">
                   <wide-padding>
                     <div class="about-img">
-                      <embed src="img/research/{}" class="img-fluid rounded b-shadow-a" alt="">
+                      {} 
                     </div>
                   </wide-padding>
                 </div>
@@ -112,7 +128,7 @@ for research in researches:
             </div>
           </div>
         </div>
-  """.format(research_to_img[research], research, " ".join(research.split("-")).upper(), abstracts[research], research)
+  """.format(get_img(research), research, " ".join(research.split("-")).upper(), abstracts[research], research)
   researches_html += research_html
 
 with open(tgt_filename, "a") as tgt_file:
