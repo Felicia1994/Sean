@@ -38,15 +38,26 @@ with open(tgt_filename, "a") as tgt_file:
 #################### content ####################
 
 teaching_html = ""
-for i in range(5):
+for i in range(1):
   class_html = """
         <div class="col-sm-12">
           <div class="service-box">
             <div class="row">
+              <div class="col-md-1">
+                <div align="right">{}</div>
+              </div>
+              <div class="col-md-10">
+                <div class="row">
+                    <p>
+                      {}
+                    </p>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
             </div>
           </div>
         </div>
-  """
+  """.format("&#9670;", "TBD")
   teaching_html += class_html
 
 with open(tgt_filename, "a") as tgt_file:
