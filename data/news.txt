@@ -1,3 +1,14 @@
-Check out the brand-new website for the X-Meng Group! (Big thanks to @Dr. Jing Ma, Google’s talented developer:) Explore our latest research on quantum networks and complex systems at https://xmeng.io
-Excited to announce the launch of the X-Meng Group at @RPI. We study quantum networks and complex systems, utilizing @IBM’s newly launched Quantum Computer on RPI campus. Follow our journey as we explore the cutting-edge of quantum information.
-@RPI and @IBM unveil the world’s first IBM Quantum System One on a university campus.
+##
+July, 2024
+Check out the brand-new website for the X-Meng Group!
+(Big thanks to @Dr. Jing Ma, Google's talented developer:)
+Explore our latest research on quantum networks and complex systems at https://xmeng.io.
+##
+July, 2024
+Excited to announce the launch of the X-Meng Group at @RPI.
+We study quantum networks and complex systems,
+utilizing @IBM’s newly launched Quantum Computer on RPI campus.
+Follow our journey as we explore the cutting-edge of quantum information.
+##
+July, 2024
+@RPI and @IBM unveil the world's first IBM Quantum System One on a university campus.
