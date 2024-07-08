@@ -4,7 +4,7 @@ except ImportError:
     from bs4 import BeautifulSoup
 import re
 from pub_parser import PubParser
-from collections import defaultdict
+from news_parser import news_parser
 
 tgt_filename = "news_page.html"
 with open(tgt_filename, "w") as tgt_file:
@@ -42,16 +42,7 @@ with open(tgt_filename, "a") as tgt_file:
 
 news_html = ""
 
-news = []
-news_filename = "data/news.txt"
-for line in open(news_filename):
-  if line.strip() == "##":
-    news.append(defaultdict())
-  elif "date" not in news[-1]:
-    news[-1]["date"] = line.strip()
-    news[-1]["content"] = ""
-  else:
-    news[-1]["content"] += line
+news = news_parser()
 
 for idx, news_piece in enumerate(news):
   new_html = """
