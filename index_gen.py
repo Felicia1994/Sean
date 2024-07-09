@@ -56,7 +56,31 @@ index_html = """
                 <div class="row">
                   <div class="col-sm-10 col-md-10">
                     <div class="about-img">
-                      <img src="img/Sean.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                      <!-- Slideshow container -->
+                      <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+"""
+for idx in range(4):
+  index_html += """
+                        <div class="mySlides">
+                          <img src="img/research/research_{}.png" style="width:100%">
+                        </div>
+  """.format(idx+1)
+index_html += """
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                      </div>
+                      <br>
+                      <!-- The dots/circles -->
+                      <div style="text-align:center">
+"""
+for idx in range(4):
+  index_html += """
+                        <span class="dot" onclick="currentSlide({})"></span>
+  """.format(idx+1)
+index_html += """
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -138,14 +162,16 @@ index_html += """
         <div class="col-sm-12">
           <div class="box-shadow-full">
             <div class="row">
-              <div class="col-sm-10 col-md-10">
-                <h6 style="text-transform: uppercase;">
-                  Bio
-                </h6>
+              <div class="col-md-5">
+                <div class="row">
+                  <div class="col-sm-10 col-md-10">
+                    <div class="about-img">
+                      <img src="img/Sean.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-7">
                 <div class="row">
                     <horizontal-padding>
                       <p>
