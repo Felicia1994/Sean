@@ -60,12 +60,25 @@ index_html = """
                       <div class="slideshow-container">
                         <!-- Full-width images with number and caption text -->
 """
-for idx in range(4):
-  index_html += """
+
+images = ["research_1.png", "research_2.mp4", "research_3.png", "research_4.png"]
+for image in images:
+  if image.endswith("png"):
+    index_html += """
                         <div class="mySlides">
-                          <img src="img/research/research_{}.png" style="width:100%">
+                          <img src="img/research/{}" style="width: 100%;">
                         </div>
-  """.format(idx+1)
+    """.format(image)
+  if image.endswith("mp4"):
+    index_html += """
+                        <div class="mySlides">
+                          <video autoplay muted loop style="width: 100%;">
+                            <source src="img/research/{}" type="video/mp4">
+                            Your browser does not support the video tag.                    
+                          </video>
+                        </div>
+    """.format(image)
+
 index_html += """
                         <!-- Next and previous buttons -->
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
