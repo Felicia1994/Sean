@@ -211,6 +211,7 @@ alumni_html = """
 
 ################ collaborators #################
 
+################# first layout #################
 collaborators_html = """
         <div class="col-sm-12">
           <div class="service-box">
@@ -248,6 +249,43 @@ collaborators_html += """
                   </wide-padding>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+"""
+# people_html += collaborators_html
+
+################ second layout #################
+collaborators_html = """
+        <div class="col-sm-12">
+          <div class="service-box">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <wide-padding>
+                    <div id = "collaborators">
+                      <div class="service-content">
+                        <h2 class="s-title text-center">
+                          <p class = "text-left">
+                            Key collaborators
+                          </p>
+                        </h2>
+                      </div>
+                    </div>
+                  </wide-padding>
+                </div>
+              </div>
+"""
+
+collaborators = ["bar-ilan.png", "bu.png", "icl.jpg",
+"kth.png", "neu.png", "nordita.png", "nwu.png", "oist.jpg", "oxford.jpg"]
+
+for collaborator in collaborators:
+  collaborators_html += """
+              <img src="img/logos/{}" style="width: 18%; height: 18%; margin: auto;">
+  """.format(collaborator)
+
+collaborators_html += """
             </div>
           </div>
         </div>
