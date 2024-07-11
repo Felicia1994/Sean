@@ -66,7 +66,7 @@ for image in images:
   if image.endswith("png"):
     index_html += """
                         <div class="mySlides">
-                          <img src="img/research/{}" style="width: 100%;">
+                          <img src="img/research/{}" style="width: 100%; padding-top: 6px;">
                         </div>
     """.format(image)
   if image.endswith("mp4"):
