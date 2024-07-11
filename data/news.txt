@@ -1,14 +1,36 @@
 ##
-July, 2024
-Check out the brand-new website for the X-Meng Group!
-(Big thanks to @Dr. Jing Ma, Google's talented developer:)
-Explore our latest research on quantum networks and complex systems at https://xmeng.io.
+date: 2024-05
+Our paper "Hidden citations obscure true impact in science" is published in PNAS Nexus.
+Many thanks to Onur and László!
+<a href="https://doi.org/10.1093/pnasnexus/pgae155" target="_blank">doi.org/10.1093/pnasnexus/pgae155</a>
+
 ##
-July, 2024
-Excited to announce the launch of the X-Meng Group at @RPI.
-We study quantum networks and complex systems,
-utilizing @IBM’s newly launched Quantum Computer on RPI campus.
-Follow our journey as we explore the cutting-edge of quantum information.
+date: 2024-03
+Our paper "Cascading Failures in Power Grids: A Load Capacity Model with Node Centrality"
+is published in Complex System Modeling and Simulation.
+Thanks to Chaoyang and Jinzhu for their contributions!
+<a href="https://doi.org/10.23919/CSMS.2023.0020" target="_blank">doi.org/10.23919/CSMS.2023.0020</a>
+
 ##
-July, 2024
-@RPI and @IBM unveil the world's first IBM Quantum System One on a university campus.
+date: 2024-06
+We have three abstracts accepted for Oral Presentations at NetSci2024
+(<a href="https://netsci2024.com/" target="_blank">netsci2024.com</a>).
+Big thanks to my amazing collaborators!
+Here are the arxiv preprints:
+<br>
+<a href="https://arxiv.org/abs/2403.16367" target="_blank">arxiv.org/abs/2403.16367</a>
+<br>
+<a href="https://arxiv.org/abs/2402.15462" target="_blank">arxiv.org/abs/2402.15462</a>
+<br>
+<a href="https://arxiv.org/abs/2406.13452" target="_blank">arxiv.org/abs/2406.13452</a>
+
+##
+date: 2024-05
+RPI and IBM unveil the world's first IBM Quantum System One on a university campus.
+
+##
+date: 2024-05
+I am thrilled to announce that I will be joining RPI Physics this August
+as a Tenure-Track Assistant Professor.
+Huge thanks to my postdoc advisors, Laszlo and Istvan,
+for the incredible research experiences that have prepared me for this next stage.
