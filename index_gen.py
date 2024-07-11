@@ -179,7 +179,7 @@ index_html += """
                 <div class="row">
                   <div class="col-sm-10 col-md-10">
                     <div class="about-img">
-                      <img src="img/Sean.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                      <img src="img/X.jpg" class="img-fluid rounded b-shadow-a" alt="">
                     </div>
                   </div>
                 </div>
