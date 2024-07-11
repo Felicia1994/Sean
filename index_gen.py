@@ -4,6 +4,7 @@ except ImportError:
     from bs4 import BeautifulSoup
 from pub_parser import PubParser
 from news_parser import news_parser
+from data.mappings import researches, research_to_img
 
 tgt_filename = "index.html"
 with open(tgt_filename, "w") as tgt_file:
@@ -61,23 +62,27 @@ index_html = """
                         <!-- Full-width images with number and caption text -->
 """
 
-images = ["research_1.png", "research_2.mp4", "research_3.png", "research_4.png"]
-for image in images:
+for research in researches:
+  image = research_to_img[research]
   if image.endswith("png"):
     index_html += """
                         <div class="mySlides">
-                          <img src="img/research/{}" style="width: 100%; padding-top: 6px;">
+                          <a href='research_page.html#research-{}'>
+                            <img src="img/research/{}" style="width: 100%; padding-top: 6px;">
+                          </a>
                         </div>
-    """.format(image)
+    """.format(research, image)
   if image.endswith("mp4"):
     index_html += """
                         <div class="mySlides">
-                          <video autoplay muted loop style="width: 100%;">
-                            <source src="img/research/{}" type="video/mp4">
-                            Your browser does not support the video tag.                    
-                          </video>
+                          <a href='research_page.html#research-{}'>
+                            <video autoplay muted loop style="width: 100%;">
+                              <source src="img/research/{}" type="video/mp4">
+                              Your browser does not support the video tag.                    
+                            </video>
+                          </a>
                         </div>
-    """.format(image)
+    """.format(research, image)
 
 index_html += """
                         <!-- Next and previous buttons -->

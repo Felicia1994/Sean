@@ -4,6 +4,7 @@ except ImportError:
     from bs4 import BeautifulSoup
 import re
 from pub_parser import PubParser
+from data.mappings import researches, research_to_img
 
 tgt_filename = "research_page.html"
 with open(tgt_filename, "w") as tgt_file:
@@ -37,8 +38,6 @@ with open(tgt_filename, "a") as tgt_file:
 
 #################### content ####################
 
-# researches = ["physical-network", "quantum-network", "hidden-citations", "network-of-networks"]
-researches = ["quantum-network", "physical-network", "network-of-physics", "network-of-networks"]
 abstracts = {
   "quantum-network": "What will a future quantum network look like? How can we efficiently communicate and compute within such a network? Does the size of the network affect its connectivity and scalability? To answer these questions, it is essential to delve into the large-scale statistical behaviors of quantum networks—more deeply than ever before.",
   "physical-network": "What if a network has a shape? Using string theory, we explore the possibility of equipping a network with differential geometry, making the network a smooth manifold. We find that a minimization principle of not only the wiring length but also higher-dimensional manifold measures (such as surface area or volume) can explain some universal morphologies of biological systems that have long been observed, yet not theorized.",
@@ -50,12 +49,6 @@ research_to_label = {
   "physical-network": "",
   "network-of-physics": "",
   "network-of-networks": "network-of-network", 
-}
-research_to_img = {
-  "quantum-network": "research_1.png",
-  "physical-network": "research_2.mp4",
-  "network-of-physics": "research_3.png",
-  "network-of-networks": "research_4.png",
 }
 
 src_filename = "data/publications.html"
@@ -95,7 +88,7 @@ def get_img(research):
 researches_html = ""
 for research in researches:
   research_html = """
-        <div class="col-sm-12">
+        <div id="research-{}" class="col-sm-12">
           <div class="service-box">
             <div class="row">
               <div class="col-md-4">
@@ -128,7 +121,7 @@ for research in researches:
             </div>
           </div>
         </div>
-  """.format(get_img(research), research, " ".join(research.split("-")).upper(), abstracts[research], research)
+  """.format(research, get_img(research), research, " ".join(research.split("-")).upper(), abstracts[research], research)
   researches_html += research_html
 
 with open(tgt_filename, "a") as tgt_file:
