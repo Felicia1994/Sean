@@ -102,7 +102,7 @@ index_html += """
                 <div class="about-me pt-4 pt-md-0">
                   <div class="title-box-2">
                     <h5 class="title-left">
-                      Physics <span class=special-x>X</span> Network
+                      Physics &thinsp;<span class=special-x>X</span> &thinsp;Network
                     </h5>
                   </div>
                   <p>
