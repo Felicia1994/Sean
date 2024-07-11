@@ -183,6 +183,13 @@ index_html += """
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-sm-10 col-md-10">
+                    <div class="about-img">
+                      <img src="img/logos/rpi.png" class="img-fluid rounded b-shadow-a" alt="">
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-md-7">
                 <div class="row">
