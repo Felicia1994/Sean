@@ -267,7 +267,7 @@ collaborators_html = """
                       <div class="service-content">
                         <h2 class="s-title text-center">
                           <p class = "text-left">
-                            Key collaborators
+                            Collaborating Institutions
                           </p>
                         </h2>
                       </div>
@@ -278,7 +278,7 @@ collaborators_html = """
 """
 
 collaborators = ["bar-ilan.png", "bu.png", "icl.jpg",
-"kth.png", "neu.png", "nordita.png", "nwu.png", "oist.jpg", "oxford.jpg"]
+"kth.png", "nordita.png", "neu.png", "nwu.png", "oist.jpg", "oxford.jpg"]
 
 for collaborator in collaborators:
   collaborators_html += """
