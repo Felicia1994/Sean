@@ -1,17 +1,4 @@
 ##
-date: 2024-05
-Our paper "Hidden citations obscure true impact in science" is published in PNAS Nexus.
-Many thanks to Onur and László!
-<a href="https://doi.org/10.1093/pnasnexus/pgae155" target="_blank">doi.org/10.1093/pnasnexus/pgae155</a>
-
-##
-date: 2024-03
-Our paper "Cascading Failures in Power Grids: A Load Capacity Model with Node Centrality"
-is published in Complex System Modeling and Simulation.
-Thanks to Chaoyang and Jinzhu for their contributions!
-<a href="https://doi.org/10.23919/CSMS.2023.0020" target="_blank">doi.org/10.23919/CSMS.2023.0020</a>
-
-##
 date: 2024-06
 We have three abstracts accepted for Oral Presentations at NetSci2024
 (<a href="https://netsci2024.com/" target="_blank">netsci2024.com</a>).
@@ -26,10 +13,33 @@ Here are the arxiv preprints:
 
 ##
 date: 2024-05
-RPI and IBM unveil the world's first IBM Quantum System One on a university campus.
+Our paper "Hidden citations obscure true impact in science" is featured in phys.org:
+<a href="https://phys.org/news/2024-05-hidden-citations-physics-obscure-true.html" target="_blank">phys.org/news/2024-05-hidden-citations-physics-obscure-true.html</a>
 
 ##
 date: 2024-05
+Our paper "Hidden citations obscure true impact in science" is featured in Physics World
+<a href="https://physicsworld.com/a/hidden-citations-conceal-the-true-impact-of-scientific-research/" target="_blank">physicsworld.com/a/hidden-citations-conceal-the-true-impact-of-scientific-research</a>
+
+##
+date: 2024-05
+Our paper "Hidden citations obscure true impact in science" is published in PNAS Nexus.
+Many thanks to Onur and László!
+<a href="https://doi.org/10.1093/pnasnexus/pgae155" target="_blank">doi.org/10.1093/pnasnexus/pgae155</a>
+
+##
+date: 2024-04
+RPI and IBM unveil the world's first IBM Quantum System One on a university campus.
+
+##
+date: 2024-03
+Our paper "Cascading Failures in Power Grids: A Load Capacity Model with Node Centrality"
+is published in Complex System Modeling and Simulation.
+Thanks to Chaoyang and Jinzhu for their contributions!
+<a href="https://doi.org/10.23919/CSMS.2023.0020" target="_blank">doi.org/10.23919/CSMS.2023.0020</a>
+
+##
+date: 2024-03
 I am thrilled to announce that I will be joining RPI Physics this August
 as a Tenure-Track Assistant Professor.
 Huge thanks to my postdoc advisors, Laszlo and Istvan,
