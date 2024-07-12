@@ -46,11 +46,13 @@ open_positions_html = """
               <div class="col-md-12">
                 <div class="row">
                   <narrow-padding>
-                    <div id = "open-positions" style='cursor: zoom-in;' onclick="myClickExpand(this)">
+                    <!-- <div id = "open-positions" style='cursor: zoom-in;' onclick="myClickExpand(this)"> -->
+                    <div id = "open-positions">
                       <div class="service-content">
                         <h2 class="s-title text-center">
                           <p class = "text-left">
-                            Open Positions (expand)
+                            <!-- Open Positions (expand) -->
+                            Open Positions
                           </p>
                         </h2>
                       </div>
@@ -62,7 +64,8 @@ open_positions_html = """
                 <div class="row">
                   <wide-padding>
                     <div class="service-content">
-                      <div id="expand-open-positions" style="display: none;">
+                      <!-- <div id="expand-open-positions" style="display: none;"> -->
+                      <div id="expand-open-positions">
                         <p><b>Postdoctoral Researchers:</b></p>
                         <p>
                           The X-Meng Group within the Department of Physics, Applied Physics, and Astronomy at RPI
