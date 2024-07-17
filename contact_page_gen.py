@@ -50,30 +50,6 @@ contact_html = """
             </div>
         </div>
         <div class="col-md-3"></div>
-"""
-
-with open(tgt_filename, "a") as tgt_file:
-    tgt_file.write(contact_html)
-
-# embeded google maps: too slow
-# maps_html = """
-#         <div class="col-sm-12">
-#           <div class="service-box">
-#             <div class="row">
-#               <div class="col-md-12" style="text-align: center;">
-# """
-# maps_filename = "data/maps.html"
-# with open(maps_filename, "r") as maps_file:
-#     maps_html += maps_file.read()
-# maps_html += """
-#               </div>
-#             </div>
-#           </div>
-#         </div>
-# """
-
-# google maps screenshot
-maps_html = """
         <div class="col-sm-12">
           <div class="service-box">
             <div class="row">
@@ -96,6 +72,26 @@ maps_html = """
                 </h6>
               </div>
             </div>
+"""
+
+with open(tgt_filename, "a") as tgt_file:
+    tgt_file.write(contact_html)
+
+# embeded google maps: too slow
+# maps_html = """
+#             <div class="row">
+#               <div class="col-md-12" style="text-align: center;">
+# """
+# maps_filename = "data/maps.html"
+# with open(maps_filename, "r") as maps_file:
+#     maps_html += maps_file.read()
+# maps_html += """
+#               </div>
+#             </div>
+# """
+
+# google maps screenshot
+maps_html = """
             <div class="row">
               <div class="col-md-12" style="text-align: center;">
                 <a href="
@@ -109,8 +105,6 @@ maps_html += """
                 </a>
               </div>
             </div>
-          </div>
-        </div>
 """
 
 with open(tgt_filename, "a") as tgt_file:
@@ -118,6 +112,8 @@ with open(tgt_filename, "a") as tgt_file:
 
 #################### footer ####################
 footer_html = """
+          </div>
+        </div>
       </div>
     </div>
   </section>
