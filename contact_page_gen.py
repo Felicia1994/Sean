@@ -78,34 +78,39 @@ with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(contact_html)
 
 # embeded google maps: too slow
-# maps_html = """
-#             <div class="row">
-#               <div class="col-md-12" style="text-align: center;">
-# """
-# maps_filename = "data/maps.html"
-# with open(maps_filename, "r") as maps_file:
-#     maps_html += maps_file.read()
-# maps_html += """
-#               </div>
-#             </div>
-# """
-
-# google maps screenshot
 maps_html = """
             <div class="row">
               <div class="col-md-12" style="text-align: center;">
-                <a href="
+                <div class="iframe-placeholder">Loading...</div>
+                <div class="iframe-content">
+                  <iframe class="iframe-content" src="
 """
 maps_filename = "data/maps.html"
 with open(maps_filename, "r") as maps_file:
     maps_html += BeautifulSoup(maps_file.read(), 'html.parser').find_all('iframe')[0]['src']
 maps_html += """
-                " target="_blank">
-                  <img title="click for the interactive view" src="img/google_maps.png" alt="Google Maps" style="width:840px;height:512px;">
-                </a>
+                  " onload="showImage()"></iframe>
+                </div>
               </div>
             </div>
 """
+
+# google maps screenshot
+# maps_html = """
+#             <div class="row">
+#               <div class="col-md-12" style="text-align: center;">
+#                 <a href="
+# """
+# maps_filename = "data/maps.html"
+# with open(maps_filename, "r") as maps_file:
+#     maps_html += BeautifulSoup(maps_file.read(), 'html.parser').find_all('iframe')[0]['src']
+# maps_html += """
+#                 " target="_blank">
+#                   <img title="click for the interactive view" src="img/google_maps.png" alt="Google Maps" style="width:840px;height:512px;">
+#                 </a>
+#               </div>
+#             </div>
+# """
 
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(maps_html)
@@ -120,7 +125,9 @@ footer_html = """
 """
 footer_filename = "footer.html"
 with open(footer_filename, "r") as footer_file:
-    footer_html += footer_file.read()
+  for line in footer_file.readlines():
+    if "preloader" not in line:
+      footer_html += line
 
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(footer_html)

@@ -30,6 +30,7 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/slideshow.css" rel="stylesheet">
+  <link href="css/iframe.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: DevFolio
@@ -134,11 +135,12 @@
 
             <div class="row">
               <div class="col-md-12" style="text-align: center;">
-                <a href="
+                <div class="iframe-placeholder">Loading...</div>
+                <div class="iframe-content">
+                  <iframe class="iframe-content" src="
 https://www.google.com/maps/d/embed?mid=1PELJFe_MBwVEQ7M41mppmoRdLpAhaUU1&ehbc=2E312F
-                " target="_blank">
-                  <img title="click for the interactive view" src="img/google_maps.png" alt="Google Maps" style="width:840px;height:512px;">
-                </a>
+                  " onload="showImage()"></iframe>
+                </div>
               </div>
             </div>
 
@@ -148,7 +150,6 @@ https://www.google.com/maps/d/embed?mid=1PELJFe_MBwVEQ7M41mppmoRdLpAhaUU1&ehbc=2
     </div>
   </section>
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-<div id="preloader"></div>
 
 <!-- JavaScript Libraries -->
 <script src="lib/jquery/jquery.min.js"></script>
@@ -167,6 +168,7 @@ https://www.google.com/maps/d/embed?mid=1PELJFe_MBwVEQ7M41mppmoRdLpAhaUU1&ehbc=2
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
 <script src="js/slideshow.js"></script>
+<script src="js/iframe.js"></script>
 
 </body>
 </html>
