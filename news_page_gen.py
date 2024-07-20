@@ -28,6 +28,13 @@ header_html += """
               News
             </h3>
             <div class="line-mf"></div>
+            <br>
+            <h5 class="socials">
+              <ul>
+                X (Twitter):&ensp;<li><a href="https://twitter.com/drxiangyimeng" target="_blank"><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
+                |&emsp;Threads:&ensp;<li><a href="https://www.threads.net/@xmeng.io" target="_blank"><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
+              </ul>
+            </h5>
           </div>
         </div>
       </div>
