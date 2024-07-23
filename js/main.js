@@ -138,3 +138,16 @@ function myClickList(myButton) {
         myButton.style.cursor = "zoom-in";
     }
 }
+
+function myClickExpand(myButton) {
+	var name = myButton.id;
+    var list = document.getElementById("expand-"+name);
+
+    if (list.style.display == "none"){
+        list.style.display = "block";
+        myButton.style.cursor = "zoom-out";
+    }else{
+        list.style.display = "none";
+        myButton.style.cursor = "zoom-in";
+    }
+}

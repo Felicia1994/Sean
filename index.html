@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>Xiangyi Meng's Personal Website</title>
+  <title>X-Meng Group</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/Sean.jpg" rel="icon">
+  <link href="img/X.jpg" rel="icon">
 
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,9 +21,16 @@
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <link href="https://fonts.cdnfonts.com/css/freestyle-script" rel="stylesheet">
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/freestyle-script');
+  </style>
+
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/slideshow.css" rel="stylesheet">
+  <link href="css/iframe.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: DevFolio
@@ -32,14 +40,14 @@
   ======================================================= -->
 </head>
 
-<!-- <body id="page-top" style="color: #000; font-family:'Trebuchet MS';"> -->
-<!-- <body id="page-top" style="font-family:'Trebuchet MS';"> -->
-<body id="page-top" style="font-family:'Times New Roman';">
+<body id="page-top">
 
   <!--/ Nav Start /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">Xiangyi Meng</a>
+      <a class="navbar-brand js-scroll" href="#page-top">
+        <span class="special-x">X</span>-Meng Group
+      </a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
@@ -55,7 +63,16 @@
             <a class="nav-link js-scroll" href="research_page.html">Research</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link js-scroll" href="people_page.html">People</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll" href="publications_page.html">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="teaching_page.html">Teaching</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="news_page.html">News</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="contact_page.html">Contact</a>
@@ -79,7 +96,54 @@
                 <div class="row">
                   <div class="col-sm-10 col-md-10">
                     <div class="about-img">
-                      <img src="img/Sean.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                      <!-- Slideshow container -->
+                      <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+
+                        <div class="mySlides">
+                          <a href='research_page.html#research-quantum-network'>
+                            <img src="img/research/research_1.png" style="width: 100%; padding-top: 6px;">
+                          </a>
+                        </div>
+    
+                        <div class="mySlides">
+                          <a href='research_page.html#research-physical-network'>
+                            <video autoplay muted loop style="width: 100%;">
+                              <source src="img/research/research_2.mp4" type="video/mp4">
+                              Your browser does not support the video tag.                    
+                            </video>
+                          </a>
+                        </div>
+    
+                        <div class="mySlides">
+                          <a href='research_page.html#research-network-of-physics'>
+                            <img src="img/research/research_3.png" style="width: 100%; padding-top: 6px;">
+                          </a>
+                        </div>
+    
+                        <div class="mySlides">
+                          <a href='research_page.html#research-network-of-networks'>
+                            <img src="img/research/research_4.png" style="width: 100%; padding-top: 6px;">
+                          </a>
+                        </div>
+    
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                      </div>
+                      <br>
+                      <!-- The dots/circles -->
+                      <div style="text-align:center">
+
+                        <span class="dot" onclick="currentSlide(1)"></span>
+  
+                        <span class="dot" onclick="currentSlide(2)"></span>
+  
+                        <span class="dot" onclick="currentSlide(3)"></span>
+  
+                        <span class="dot" onclick="currentSlide(4)"></span>
+  
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -88,47 +152,201 @@
                 <div class="about-me pt-4 pt-md-0">
                   <div class="title-box-2">
                     <h5 class="title-left">
-                      PHYSICS X NETWORK
+                      Physics &thinsp;<span class=special-x>X</span> &thinsp;Network
                     </h5>
                   </div>
-                  <p class="lead">
-                    "The physics of network, or the network of physics?" This rhetorical question rightly conveys my dedication—to understand the interplay between network science and statistical/quantum physics.
+                  <p>
+                    The physics of networks, or the network of physics?
+                  </p>
+                  <p>
+                    This rhetorical question captures the interdisciplinary essence of our research group's mission
+                    &mdash; to explore the rich interplay between network science and both statistical and quantum physics.
+                  </p>
+                  <p>
+                    Led by Professor Xiangyi "X" Meng, the group's research spans several areas:
+                  </p>
+                  <p>
+                    <ul>
+                      <li>Quantum networks, communications, and computing; quantum complex systems.</li>
+                      <li>Physical/biological networks (and their connections to string theory).</li>
+                      <li>Statistical physics of complex networks, network metrics.</li>
+                      <li>Open quantum systems, open quantum field theories.</li>
+                    </ul>
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="box-shadow-full">
+            <div class="row">
+              <div class="col-sm-10 col-md-10">
+                <h6 style="text-transform: uppercase;">
+                  <a href="news_page.html">News</a>
+                </h6>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1">
+                <div align="right">&#9670;</div>
+              </div>
+              <div class="col-md-10">
+                <div class="row">
+                    <p>
+                      [Jun, 2024] We have three abstracts accepted for Oral Presentations at NetSci2024
+(<a href="https://netsci2024.com/" target="_blank">netsci2024.com</a>).
+Big thanks to my amazing collaborators!
+Here are the arxiv preprints:
+<br>
+<a href="https://arxiv.org/abs/2403.16367" target="_blank">arxiv.org/abs/2403.16367</a>
+<br>
+<a href="https://arxiv.org/abs/2402.15462" target="_blank">arxiv.org/abs/2402.15462</a>
+<br>
+<a href="https://arxiv.org/abs/2406.13452" target="_blank">arxiv.org/abs/2406.13452</a>
+
+
+                    </p>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1">
+                <div align="right">&#9670;</div>
+              </div>
+              <div class="col-md-10">
+                <div class="row">
+                    <p>
+                      [May, 2024] Our paper "Hidden citations obscure true impact in science" is featured in phys.org:
+<a href="https://phys.org/news/2024-05-hidden-citations-physics-obscure-true.html" target="_blank">phys.org/news/2024-05-hidden-citations-physics-obscure-true.html</a>
+
+
+                    </p>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1">
+                <div align="right">&#9670;</div>
+              </div>
+              <div class="col-md-10">
+                <div class="row">
+                    <p>
+                      [May, 2024] Our paper "Hidden citations obscure true impact in science" is featured in Physics World
+<a href="https://physicsworld.com/a/hidden-citations-conceal-the-true-impact-of-scientific-research/" target="_blank">physicsworld.com/a/hidden-citations-conceal-the-true-impact-of-scientific-research</a>
+
+
+                    </p>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1">
+                <div align="right">&#9670;</div>
+              </div>
+              <div class="col-md-10">
+                <div class="row">
+                    <p>
+                      [May, 2024] Our paper "Hidden citations obscure true impact in science" is published in PNAS Nexus.
+Many thanks to Onur and László!
+<a href="https://doi.org/10.1093/pnasnexus/pgae155" target="_blank">doi.org/10.1093/pnasnexus/pgae155</a>
+
+
+                    </p>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1">
+                <div align="right">&#9670;</div>
+              </div>
+              <div class="col-md-10">
+                <div class="row">
+                    <p>
+                      [Apr, 2024] RPI and IBM unveil the world's first IBM Quantum System One on a university campus.
+
+
+                    </p>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1">
+                <div align="right">&#9670;</div>
+              </div>
+              <div class="col-md-10">
+                <div class="row">
+                    <p>
+                      ...
+                    </p>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="box-shadow-full">
+            <div class="row">
               <div class="col-md-5">
-                <div class="about-me pt-4 pt-md-0">
-                  <p>
-                    Xiangyi Meng, Research Associate
-                  </p>
-                  <p>
-                    Department of Physics and Astronomy
-                  </p>
-                  <p>                    
-                    Northwestern University
-                  </p>
-                  <p>
-                    Evanston, Illinois 60208, USA
-                  </p>
+                <div class="row">
+                  <div class="col-sm-10 col-md-10">
+                    <div class="about-img">
+                      <img src="img/X.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-10 col-md-10">
+                    <div class="about-img">
+                      <img src="img/logos/rpi.png" class="img-fluid rounded b-shadow-a" alt="">
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="col-md-7">
-                <div class="about-me pt-4 pt-md-0">
-                  <p class="lead">
-                    My research focus: 
-                  </p>
-                  <p class="lead">
-                    physical networks (and their connection to string theory), 
-                  </p>
-                  <p class="lead">                    
-                    quantum networks,
-                  </p>
-                  <p class="lead">
-                    statistical physics of complex networks, 
-                  </p>
-                  <p class="lead">
-                    open quantum field theories.
-                  </p>
+                <div class="row">
+                    <horizontal-padding>
+                      <p>
+                        Prof. Xiangyi "X" Meng is an Assistant Professor in the Department of
+                        Physics, Applied Physics, and Astronomy at Rensselaer Polytechnic Institute (RPI).
+                        He earned his B.S. in microelectronics from Peking University
+                        and completed his Ph.D. in physics at Boston University
+                        (advised by Prof. Eugene Stanley).
+                        Prior to his role at RPI, he worked with Prof. Albert-László Barabási
+                        as a Postdoc at Northeastern University's Center for Complex Network Research,
+                        and with Prof. István Kovács as a Research Associate at Northwestern University.
+                      </p>
+                      <p>
+                        Prof. Meng's research spans several areas of physics and network science,
+                        including quantum networks and quantum information,
+                        open quantum field theories, science of science,
+                        computational social science, physical and biological networks,
+                        scale-free network theories, information diffusion,
+                        tensor networks, and recurrent neural networks.
+                        He also applies interdisciplinary network science approaches to explore brains and econophysics.
+                      </p>
+                      <p>
+                        Prof. Meng has published 20+ publications in prestigious journals
+                        such as <i>Physical Review Letters, PNAS, PNAS Nexus, Nature Human Behaviors,
+                        Nature Communications, Communications Physics, Chaos Solitons & Fractals,
+                        Physical Review D, Physical Review Research,</i> among others.
+                        He has reviewed 40+ papers from the above journals and <i>Europhysics Letters,
+                        New Journal of Physics, Magnetic Resonance in Medicine,</i> etc.
+                        His work has been highlighted in <i>Physics World, Phys.org,</i> among other media outlets.
+                      </p>
+                    </horizontal-padding>
                 </div>
               </div>
             </div>
@@ -157,6 +375,8 @@
 
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
+<script src="js/slideshow.js"></script>
+<script src="js/iframe.js"></script>
 
 </body>
 </html>

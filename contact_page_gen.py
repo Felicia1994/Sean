@@ -40,7 +40,7 @@ with open(tgt_filename, "a") as tgt_file:
 
 contact_html = """
         <div class="col-md-3"></div>
-        <div class="col-md-6" style="text-align: center;">
+        <div class="col-md-6" style="text-align: center; margin-bottom:30px;">
             <div class="more-info">
               <ul class="list-ico">
                   <li><span class="ion-email"></span> xm@northwestern.edu </li>
@@ -48,48 +48,86 @@ contact_html = """
                   <!-- <li><span class="ion-ios-location"></span> 590 Commonwealth Avenue, Boston, MA 02135</li> -->
               </ul>
             </div>
-            <div class="socials">
-              <ul>
-                <li><a href="https://scholar.google.com/citations?user=WpxQwZUAAAAJ&hl=en" target="_blank"><span class="ico-circle"><i class="ion-social-google"></i></span></a></li>
-                <li><a href="https://www.zotero.org/xiangyi_meng" target="_blank"><span class="ico-circle"><i class="ion-ios-paper-outline"></i></span></a></li>
-                <li><a href="https://www.researchgate.net/profile/Xiangyi-Meng-2" target="_blank"><span class="ico-circle"><i class="ion-ios-paper"></i></span></a></li>
-              </ul>
-            </div>
         </div>
         <div class="col-md-3"></div>
+        <div class="col-sm-12">
+          <div class="service-box">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6" style="text-align: left; margin-bottom:30px;">
+                <h6>
+                  You live through certain things before you understand them.
+                </h6>
+                <h6>
+                  You can't always take the analytical position.
+                </h6>
+                <h6>
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; &mdash; Sally Rooney, Conversations with Friends.
+                </h6>
+              </div>
+              <div class="col-md-3"></div>
+              <div class="col-md-12" style="text-align: center;">
+                <h6>
+                  (If I am not on campus, you can likely find me at one of the locations marked on this map.)
+                </h6>
+              </div>
+            </div>
 """
 
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(contact_html)
 
+# embeded google maps: too slow
 maps_html = """
-        <div class="col-sm-12">
-          <div class="service-box">
             <div class="row">
               <div class="col-md-12" style="text-align: center;">
+                <div class="iframe-placeholder">Loading...</div>
+                <div class="iframe-content">
+                  <iframe class="iframe-content" src="
 """
 maps_filename = "data/maps.html"
 with open(maps_filename, "r") as maps_file:
-    maps_html += maps_file.read()
+    maps_html += BeautifulSoup(maps_file.read(), 'html.parser').find_all('iframe')[0]['src']
 maps_html += """
+                  " onload="showImage()"></iframe>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 """
+
+# google maps screenshot
+# maps_html = """
+#             <div class="row">
+#               <div class="col-md-12" style="text-align: center;">
+#                 <a href="
+# """
+# maps_filename = "data/maps.html"
+# with open(maps_filename, "r") as maps_file:
+#     maps_html += BeautifulSoup(maps_file.read(), 'html.parser').find_all('iframe')[0]['src']
+# maps_html += """
+#                 " target="_blank">
+#                   <img title="click for the interactive view" src="img/google_maps.png" alt="Google Maps" style="width:840px;height:512px;">
+#                 </a>
+#               </div>
+#             </div>
+# """
 
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(maps_html)
 
 #################### footer ####################
 footer_html = """
+          </div>
+        </div>
       </div>
     </div>
   </section>
 """
 footer_filename = "footer.html"
 with open(footer_filename, "r") as footer_file:
-    footer_html += footer_file.read()
+  for line in footer_file.readlines():
+    if "preloader" not in line:
+      footer_html += line
 
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(footer_html)

@@ -1,0 +1,16 @@
+.iframe-placeholder {
+  width: 80%;
+  height: 480px;
+  background-color: #bbb;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  color: #fff;
+}
+.iframe-content iframe {
+  display: none;
+  width: 80%;
+  height: 480px;
+  margin: 0 auto;
+}

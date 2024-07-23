@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>Xiangyi Meng's Personal Website</title>
+  <title>X-Meng Group</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/Sean.jpg" rel="icon">
+  <link href="img/X.jpg" rel="icon">
 
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,9 +21,16 @@
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <link href="https://fonts.cdnfonts.com/css/freestyle-script" rel="stylesheet">
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/freestyle-script');
+  </style>
+
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/slideshow.css" rel="stylesheet">
+  <link href="css/iframe.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: DevFolio
@@ -32,14 +40,14 @@
   ======================================================= -->
 </head>
 
-<!-- <body id="page-top" style="color: #000; font-family:'Trebuchet MS';"> -->
-<!-- <body id="page-top" style="font-family:'Trebuchet MS';"> -->
-<body id="page-top" style="font-family:'Times New Roman';">
+<body id="page-top">
 
   <!--/ Nav Start /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">Xiangyi Meng</a>
+      <a class="navbar-brand js-scroll" href="#page-top">
+        <span class="special-x">X</span>-Meng Group
+      </a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
@@ -55,7 +63,16 @@
             <a class="nav-link js-scroll" href="research_page.html">Research</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link js-scroll" href="people_page.html">People</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll" href="publications_page.html">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="teaching_page.html">Teaching</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="news_page.html">News</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="contact_page.html">Contact</a>
@@ -83,7 +100,7 @@
       <div id="contact" class="row">
 
         <div class="col-md-3"></div>
-        <div class="col-md-6" style="text-align: center;">
+        <div class="col-md-6" style="text-align: center; margin-bottom:30px;">
             <div class="more-info">
               <ul class="list-ico">
                   <li><span class="ion-email"></span> xm@northwestern.edu </li>
@@ -91,31 +108,48 @@
                   <!-- <li><span class="ion-ios-location"></span> 590 Commonwealth Avenue, Boston, MA 02135</li> -->
               </ul>
             </div>
-            <div class="socials">
-              <ul>
-                <li><a href="https://scholar.google.com/citations?user=WpxQwZUAAAAJ&hl=en" target="_blank"><span class="ico-circle"><i class="ion-social-google"></i></span></a></li>
-                <li><a href="https://www.zotero.org/xiangyi_meng" target="_blank"><span class="ico-circle"><i class="ion-ios-paper-outline"></i></span></a></li>
-                <li><a href="https://www.researchgate.net/profile/Xiangyi-Meng-2" target="_blank"><span class="ico-circle"><i class="ion-ios-paper"></i></span></a></li>
-              </ul>
-            </div>
         </div>
         <div class="col-md-3"></div>
-
         <div class="col-sm-12">
           <div class="service-box">
             <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6" style="text-align: left; margin-bottom:30px;">
+                <h6>
+                  You live through certain things before you understand them.
+                </h6>
+                <h6>
+                  You can't always take the analytical position.
+                </h6>
+                <h6>
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; &mdash; Sally Rooney, Conversations with Friends.
+                </h6>
+              </div>
+              <div class="col-md-3"></div>
               <div class="col-md-12" style="text-align: center;">
-<iframe src="https://www.google.com/maps/d/embed?mid=1PELJFe_MBwVEQ7M41mppmoRdLpAhaUU1&ehbc=2E312F" width="960" height="480"></iframe>
+                <h6>
+                  (If I am not on campus, you can likely find me at one of the locations marked on this map.)
+                </h6>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-md-12" style="text-align: center;">
+                <div class="iframe-placeholder">Loading...</div>
+                <div class="iframe-content">
+                  <iframe class="iframe-content" src="
+https://www.google.com/maps/d/embed?mid=1PELJFe_MBwVEQ7M41mppmoRdLpAhaUU1&ehbc=2E312F
+                  " onload="showImage()"></iframe>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-
       </div>
     </div>
   </section>
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-<div id="preloader"></div>
 
 <!-- JavaScript Libraries -->
 <script src="lib/jquery/jquery.min.js"></script>
@@ -133,6 +167,8 @@
 
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
+<script src="js/slideshow.js"></script>
+<script src="js/iframe.js"></script>
 
 </body>
 </html>

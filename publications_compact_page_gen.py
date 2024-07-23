@@ -27,13 +27,20 @@ header_html += """
             </h3>
             <div class="line-mf"></div>
             <br>
+            <h5 class="socials">
+              <ul>
+                Google Scholar:&ensp;<li><a href="https://scholar.google.com/citations?user=WpxQwZUAAAAJ&hl=en" target="_blank"><span class="ico-circle"><i class="ion-social-google"></i></span></a></li>
+                |&emsp;Zotero:&ensp;<li><a href="https://www.zotero.org/xiangyi_meng" target="_blank"><span class="ico-circle"><i class="ion-ios-paper-outline"></i></span></a></li>
+                |&emsp;ResearchGate:&ensp;<li><a href="https://www.researchgate.net/profile/Xiangyi-Meng-2" target="_blank"><span class="ico-circle"><i class="ion-ios-paper"></i></span></a></li>
+              </ul>
+            </h5>
             <h6 align="right">
               view: <a href="publications_page.html"><u>with preview</u></a> | <b>full list</b>
             </h6>
           </div>
         </div>
       </div>
-      <div id="publications" class="row">
+      <div id="publications" class="row" style="font-family: var(--serif-font);">
         <div id="{}" class="col-sm-12">
           <div class="service-box">
 """
@@ -70,7 +77,7 @@ for idx, pub in enumerate(publications):
               </div>
               <div class="col-md-1"></div>
             </div>
-    """.format(idx+1, _pub_parser.get_citation_formatted())
+    """.format(len(publications)-idx, _pub_parser.get_citation_formatted())
     publications_html += pub_html
 
 with open(tgt_filename, "a") as tgt_file:

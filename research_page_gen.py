@@ -4,6 +4,7 @@ except ImportError:
     from bs4 import BeautifulSoup
 import re
 from pub_parser import PubParser
+from data.mappings import researches, research_to_img
 
 tgt_filename = "research_page.html"
 with open(tgt_filename, "w") as tgt_file:
@@ -37,18 +38,17 @@ with open(tgt_filename, "a") as tgt_file:
 
 #################### content ####################
 
-researches = ["physical-network", "quantum-network", "hidden-citations", "network-of-networks"]
 abstracts = {
-  "physical-network": "What if a network has a shape? Using string theory, we explore the possibility of equipping a network with differential geometry, making the network a smooth <b>manifold</b>. We find that a minimization principle of not only the wiring length but also higher-dimensional manifold measures (such as surface area or volume) can explain some universal morphologies of biological systems that have long been observed, yet not theorized.",
-  "quantum-network": "How to efficiently distribute <b>quantum entanglement</b> between two or more distant nodes that are not directly linked (hence not directed entangled)? To answer this question, we need to understand the large-scale statistical behaviors of quantum networks—at a level deeper than ever before.",
-  "hidden-citations": "This is a network of not just explicit citations, but <b>hidden citations</b>, representing clear textual credits to a discovery without references to the publication embodying it. Case in point are Einstein's relativity, which is so embedded into scientific literacy that only rarely do manuscripts focusing on the topic explicitly cite Einstein's papers. Not only does counting hidden citations reveal the deeper connections between topics—it also reshapes our use of citations for scientific credit allocation.",
-  "network-of-networks": "A network of networks contains multiple layers, each layer representing a network that is interdependent to other layers through bridge nodes and links. We are interested in the structual and dynamical behaviors of such a network of networks, analyzing them using a rich set of tools—from percolation theories to dynamical equations."
+  "quantum-network": "What will a future quantum network look like? How can we efficiently communicate and compute within such a network? Does the size of the network affect its connectivity and scalability? To answer these questions, it is essential to delve into the large-scale statistical behaviors of quantum networks—more deeply than ever before.",
+  "physical-network": "What if a network has a shape? Using string theory, we explore the possibility of equipping a network with differential geometry, making the network a smooth manifold. We find that a minimization principle of not only the wiring length but also higher-dimensional manifold measures (such as surface area or volume) can explain some universal morphologies of biological systems that have long been observed, yet not theorized.",
+  "network-of-physics": "This network displays 880 foundational physics papers (Blue: high energy. Red: condensed matter. Yellow: quantum. Green: astrophysics. Gray: other fields) as nodes and halos. Node size corresponds to explicit citations, while halos represent hidden citations—representing clear textual credits to a discovery (e.g., general relativity) without references to the publication (Einstein’s 1915 paper) embodying it. Accounting for hidden citations allows us to uncover deeper connections between topics and reshape how we allocate scientific credit based on citation counts.",
+  "network-of-networks": "In many real-world systems, individual networks depend on other networks, forming interdependent networks. For example, a traffic network and a power grid may rely on each other: the power grid provides lighting for roads, while the traffic network enables maintenance of the power cables. We are interested in the structural and dynamical behaviors of such a network of networks, analyzing them using a rich set of tools, from percolation theories to dynamical equations.",
 }
 research_to_label = {
   "quantum-network": "quantum-network",
   "physical-network": "",
+  "network-of-physics": "",
   "network-of-networks": "network-of-network", 
-  "hidden-citations": ""
 }
 
 src_filename = "data/publications.html"
@@ -67,28 +67,43 @@ def get_pubs(research):
     _pub_parser = PubParser(pub)
     label = research_to_label[research]
     if label in _pub_parser.get_labels():
-      ans += "<li><a href='publications_page.html#{}' target='_blank' style='cursor: zoom-in;'>{}</a></li>".format(_pub_parser.get_id(), _pub_parser.get_title())
+      ans += "<li><a href='publications_page.html#{}'>{}</a></li>".format(_pub_parser.get_id(), _pub_parser.get_title())
   return ans
+
+def get_img(research):
+  img = research_to_img[research]
+  if img.endswith("png"):
+    return """
+                      <img src="img/research/{}" class="img-fluid rounded b-shadow-a" alt="">
+    """.format(img)
+  if img.endswith("mp4"):
+    return """
+                      <video autoplay muted loop class="img-fluid rounded b-shadow-a">
+                        <source src="img/research/{}" type="video/mp4" class="img-fluid rounded b-shadow-a">
+                        Your browser does not support the video tag.                    
+                      </video>
+    """.format(img)
+  return ""
 
 researches_html = ""
 for research in researches:
   research_html = """
-        <div class="col-sm-12">
+        <div id="research-{}" class="col-sm-12">
           <div class="service-box">
             <div class="row">
               <div class="col-md-4">
                 <div class="row">
-                  <mypadding>
+                  <wide-padding>
                     <div class="about-img">
-                      <img src="img/{}.png" class="img-fluid rounded b-shadow-a" alt="">
+                      {} 
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
               <div class="col-md-8">
                 <div class="row">
-                  <mypadding>
-                    <div id = "list-{}" style='cursor: zoom-in;' onclick="myClickList(this)">
+                  <wide-padding>
+                    <div id = "list-{}">
                       <div class="service-content">
                         <h2 class="s-title text-center">
                           <p class = "text-left">
@@ -100,24 +115,13 @@ for research in researches:
                         </p>
                       </div>
                     </div>
-                  </mypadding>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <mypadding>
-                    <div class="service-content">
-                      <ul id="ullist-{}" style="display: none;">
-                        {}
-                      </ul>
-                    </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
             </div>
           </div>
         </div>
-  """.format(research, research, " ".join(research.split("-")).upper(), abstracts[research], research, get_pubs(research))
+  """.format(research, get_img(research), research, " ".join(research.split("-")).upper(), abstracts[research], research)
   researches_html += research_html
 
 with open(tgt_filename, "a") as tgt_file:

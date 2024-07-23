@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>Xiangyi Meng's Personal Website</title>
+  <title>X-Meng Group</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/Sean.jpg" rel="icon">
+  <link href="img/X.jpg" rel="icon">
 
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,9 +21,16 @@
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <link href="https://fonts.cdnfonts.com/css/freestyle-script" rel="stylesheet">
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/freestyle-script');
+  </style>
+
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/slideshow.css" rel="stylesheet">
+  <link href="css/iframe.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: DevFolio
@@ -32,14 +40,14 @@
   ======================================================= -->
 </head>
 
-<!-- <body id="page-top" style="color: #000; font-family:'Trebuchet MS';"> -->
-<!-- <body id="page-top" style="font-family:'Trebuchet MS';"> -->
-<body id="page-top" style="font-family:'Times New Roman';">
+<body id="page-top">
 
   <!--/ Nav Start /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">Xiangyi Meng</a>
+      <a class="navbar-brand js-scroll" href="#page-top">
+        <span class="special-x">X</span>-Meng Group
+      </a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
@@ -55,7 +63,16 @@
             <a class="nav-link js-scroll" href="research_page.html">Research</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link js-scroll" href="people_page.html">People</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll" href="publications_page.html">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="teaching_page.html">Teaching</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="news_page.html">News</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="contact_page.html">Contact</a>
@@ -82,67 +99,24 @@
       </div>
       <div id="research" class="row">
 
-        <div class="col-sm-12">
+        <div id="research-quantum-network" class="col-sm-12">
           <div class="service-box">
             <div class="row">
               <div class="col-md-4">
                 <div class="row">
-                  <mypadding>
+                  <wide-padding>
                     <div class="about-img">
-                      <img src="img/physical-network.png" class="img-fluid rounded b-shadow-a" alt="">
+                      
+                      <img src="img/research/research_1.png" class="img-fluid rounded b-shadow-a" alt="">
+     
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
               <div class="col-md-8">
                 <div class="row">
-                  <mypadding>
-                    <div id = "list-physical-network" style='cursor: zoom-in;' onclick="myClickList(this)">
-                      <div class="service-content">
-                        <h2 class="s-title text-center">
-                          <p class = "text-left">
-                            PHYSICAL NETWORK
-                          </p>
-                        </h2>
-                        <p>
-                          What if a network has a shape? Using string theory, we explore the possibility of equipping a network with differential geometry, making the network a smooth <b>manifold</b>. We find that a minimization principle of not only the wiring length but also higher-dimensional manifold measures (such as surface area or volume) can explain some universal morphologies of biological systems that have long been observed, yet not theorized.
-                        </p>
-                      </div>
-                    </div>
-                  </mypadding>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <mypadding>
-                    <div class="service-content">
-                      <ul id="ullist-physical-network" style="display: none;">
-                        
-                      </ul>
-                    </div>
-                  </mypadding>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-sm-12">
-          <div class="service-box">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="row">
-                  <mypadding>
-                    <div class="about-img">
-                      <img src="img/quantum-network.png" class="img-fluid rounded b-shadow-a" alt="">
-                    </div>
-                  </mypadding>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="row">
-                  <mypadding>
-                    <div id = "list-quantum-network" style='cursor: zoom-in;' onclick="myClickList(this)">
+                  <wide-padding>
+                    <div id = "list-quantum-network">
                       <div class="service-content">
                         <h2 class="s-title text-center">
                           <p class = "text-left">
@@ -150,91 +124,110 @@
                           </p>
                         </h2>
                         <p>
-                          How to efficiently distribute <b>quantum entanglement</b> between two or more distant nodes that are not directly linked (hence not directed entangled)? To answer this question, we need to understand the large-scale statistical behaviors of quantum networks—at a level deeper than ever before.
+                          What will a future quantum network look like? How can we efficiently communicate and compute within such a network? Does the size of the network affect its connectivity and scalability? To answer these questions, it is essential to delve into the large-scale statistical behaviors of quantum networks—more deeply than ever before.
                         </p>
                       </div>
                     </div>
-                  </mypadding>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <mypadding>
-                    <div class="service-content">
-                      <ul id="ullist-quantum-network" style="display: none;">
-                        <li><a href='publications_page.html#item_EJAWDNS5' target='_blank' style='cursor: zoom-in;'>Percolation Theories for Quantum Networks</a></li><li><a href='publications_page.html#item_9DHTWDZJ' target='_blank' style='cursor: zoom-in;'>Concurrence percolation threshold of large-scale quantum networks</a></li><li><a href='publications_page.html#item_WC3PN7L8' target='_blank' style='cursor: zoom-in;'>Entanglement-Structured LSTM Boosts Chaotic Time Series Forecasting</a></li><li><a href='publications_page.html#item_HS96VU6P' target='_blank' style='cursor: zoom-in;'>Double-trace deformation in open quantum field theory</a></li><li><a href='publications_page.html#item_BZ3L8MBM' target='_blank' style='cursor: zoom-in;'>Concurrence Percolation in Quantum Networks</a></li><li><a href='publications_page.html#item_KDXTSH8I' target='_blank' style='cursor: zoom-in;'>Multiple-scale perturbation method on integro-differential 
-equations: Application to continuous-time quantum walks on regular 
-networks in non-Markovian reservoirs</a></li><li><a href='publications_page.html#item_6N9H8GZW' target='_blank' style='cursor: zoom-in;'>Minimal Evolution Time and Quantum Speed Limit of Non-Markovian Open Systems</a></li>
-                      </ul>
-                    </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
             </div>
           </div>
         </div>
   
-        <div class="col-sm-12">
+        <div id="research-physical-network" class="col-sm-12">
           <div class="service-box">
             <div class="row">
               <div class="col-md-4">
                 <div class="row">
-                  <mypadding>
+                  <wide-padding>
                     <div class="about-img">
-                      <img src="img/hidden-citations.png" class="img-fluid rounded b-shadow-a" alt="">
+                      
+                      <video autoplay muted loop class="img-fluid rounded b-shadow-a">
+                        <source src="img/research/research_2.mp4" type="video/mp4" class="img-fluid rounded b-shadow-a">
+                        Your browser does not support the video tag.                    
+                      </video>
+     
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
               <div class="col-md-8">
                 <div class="row">
-                  <mypadding>
-                    <div id = "list-hidden-citations" style='cursor: zoom-in;' onclick="myClickList(this)">
+                  <wide-padding>
+                    <div id = "list-physical-network">
                       <div class="service-content">
                         <h2 class="s-title text-center">
                           <p class = "text-left">
-                            HIDDEN CITATIONS
+                            PHYSICAL NETWORK
                           </p>
                         </h2>
                         <p>
-                          This is a network of not just explicit citations, but <b>hidden citations</b>, representing clear textual credits to a discovery without references to the publication embodying it. Case in point are Einstein's relativity, which is so embedded into scientific literacy that only rarely do manuscripts focusing on the topic explicitly cite Einstein's papers. Not only does counting hidden citations reveal the deeper connections between topics—it also reshapes our use of citations for scientific credit allocation.
+                          What if a network has a shape? Using string theory, we explore the possibility of equipping a network with differential geometry, making the network a smooth manifold. We find that a minimization principle of not only the wiring length but also higher-dimensional manifold measures (such as surface area or volume) can explain some universal morphologies of biological systems that have long been observed, yet not theorized.
                         </p>
                       </div>
                     </div>
-                  </mypadding>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <mypadding>
-                    <div class="service-content">
-                      <ul id="ullist-hidden-citations" style="display: none;">
-                        
-                      </ul>
-                    </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
             </div>
           </div>
         </div>
   
-        <div class="col-sm-12">
+        <div id="research-network-of-physics" class="col-sm-12">
           <div class="service-box">
             <div class="row">
               <div class="col-md-4">
                 <div class="row">
-                  <mypadding>
+                  <wide-padding>
                     <div class="about-img">
-                      <img src="img/network-of-networks.png" class="img-fluid rounded b-shadow-a" alt="">
+                      
+                      <img src="img/research/research_3.png" class="img-fluid rounded b-shadow-a" alt="">
+     
                     </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
               <div class="col-md-8">
                 <div class="row">
-                  <mypadding>
-                    <div id = "list-network-of-networks" style='cursor: zoom-in;' onclick="myClickList(this)">
+                  <wide-padding>
+                    <div id = "list-network-of-physics">
+                      <div class="service-content">
+                        <h2 class="s-title text-center">
+                          <p class = "text-left">
+                            NETWORK OF PHYSICS
+                          </p>
+                        </h2>
+                        <p>
+                          This network displays 880 foundational physics papers (Blue: high energy. Red: condensed matter. Yellow: quantum. Green: astrophysics. Gray: other fields) as nodes and halos. Node size corresponds to explicit citations, while halos represent hidden citations—representing clear textual credits to a discovery (e.g., general relativity) without references to the publication (Einstein’s 1915 paper) embodying it. Accounting for hidden citations allows us to uncover deeper connections between topics and reshape how we allocate scientific credit based on citation counts.
+                        </p>
+                      </div>
+                    </div>
+                  </wide-padding>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div id="research-network-of-networks" class="col-sm-12">
+          <div class="service-box">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="row">
+                  <wide-padding>
+                    <div class="about-img">
+                      
+                      <img src="img/research/research_4.png" class="img-fluid rounded b-shadow-a" alt="">
+     
+                    </div>
+                  </wide-padding>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="row">
+                  <wide-padding>
+                    <div id = "list-network-of-networks">
                       <div class="service-content">
                         <h2 class="s-title text-center">
                           <p class = "text-left">
@@ -242,22 +235,11 @@ networks in non-Markovian reservoirs</a></li><li><a href='publications_page.html
                           </p>
                         </h2>
                         <p>
-                          A network of networks contains multiple layers, each layer representing a network that is interdependent to other layers through bridge nodes and links. We are interested in the structual and dynamical behaviors of such a network of networks, analyzing them using a rich set of tools—from percolation theories to dynamical equations.
+                          In many real-world systems, individual networks depend on other networks, forming interdependent networks. For example, a traffic network and a power grid may rely on each other: the power grid provides lighting for roads, while the traffic network enables maintenance of the power cables. We are interested in the structural and dynamical behaviors of such a network of networks, analyzing them using a rich set of tools, from percolation theories to dynamical equations.
                         </p>
                       </div>
                     </div>
-                  </mypadding>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <mypadding>
-                    <div class="service-content">
-                      <ul id="ullist-network-of-networks" style="display: none;">
-                        <li><a href='publications_page.html#item_NM95Z499' target='_blank' style='cursor: zoom-in;'>Robustness of interdependent scale-free networks based on link addition strategies</a></li><li><a href='publications_page.html#item_L8HSNSEA' target='_blank' style='cursor: zoom-in;'>Peak fraction of infected in epidemic spreading for multi-community networks</a></li>
-                      </ul>
-                    </div>
-                  </mypadding>
+                  </wide-padding>
                 </div>
               </div>
             </div>
@@ -286,6 +268,8 @@ networks in non-Markovian reservoirs</a></li><li><a href='publications_page.html
 
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
+<script src="js/slideshow.js"></script>
+<script src="js/iframe.js"></script>
 
 </body>
 </html>
