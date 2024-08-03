@@ -53,8 +53,7 @@ contact_html = """
         <div class="col-sm-12">
           <div class="service-box">
             <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-6" style="text-align: left; margin-bottom:30px;">
+              <div class="col-md-12" style="text-align: center; margin-bottom:30px;">
                 <h6>
                   You live through certain things before you understand them.
                 </h6>
@@ -62,10 +61,9 @@ contact_html = """
                   You can't always take the analytical position.
                 </h6>
                 <h6>
-                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; &mdash; Sally Rooney, Conversations with Friends.
+                  &mdash; Sally Rooney, Conversations with Friends.
                 </h6>
               </div>
-              <div class="col-md-3"></div>
               <div class="col-md-12" style="text-align: center;">
                 <h6>
                   (If I am not on campus, you can likely find me at one of the locations marked on this map.)
