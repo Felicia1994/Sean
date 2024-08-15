@@ -93,7 +93,7 @@ open_positions_html = """
                           <li>Academic travels with full support (5%).</li>
                         </ul>
                         <p>We strongly encourage applications from members of underrepresented groups.</p>
-                        <p>If you are interested in a position, please send the following to xmenggroup@gmail.com:</p>
+                        <p>If you are interested in a position, please send the following to (xmenggroup at gmail.com):</p>
                         <ol>
                           <li>a current CV with publication list,</li>
                           <li>a 1-2 page statement of research experience and interests, and</li>
