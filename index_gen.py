@@ -169,7 +169,7 @@ index_html += """
               <div class="col-md-10">
                 <div class="row">
                     <p>
-                      ...
+                      <a href="news_page.html">...</a>
                     </p>
                 </div>
               </div>
