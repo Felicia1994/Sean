@@ -116,7 +116,7 @@ open_positions_html = """
                           <li>
                             <b>Career Support:</b>
                             An important criterion for tenure evaluation of junior professors
-                            is successfully graduating students and helping them secure ideal academic or industry positions.
+                            is helping students and postdocs secure ideal academic or industry positions.
                             With this motivation in mind,
                             I can offer significant assistance that senior professors
                             might find challenging to provide.
