@@ -41,6 +41,7 @@ header_html += """
       <div id="news" class="row">
         <div class="col-sm-12">
           <div class="service-box">
+            <ul>
 """
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(header_html)
@@ -53,20 +54,12 @@ news = news_parser()
 
 for idx, news_piece in enumerate(news):
   new_html = """
-            <div class="row">
-              <div class="col-md-1">
-                <div align="right">{}</div>
-              </div>
-              <div class="col-md-10">
-                <div class="row">
-                    <p>
-                      [{}] {}
-                    </p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-  """.format("&#9670;", news_piece["date"], news_piece["content"])
+              <li>
+                <p>
+                  [{}] {}
+                </p>
+              </li>
+  """.format(news_piece["date"], news_piece["content"])
   news_html += new_html
 
 with open(tgt_filename, "a") as tgt_file:
@@ -75,6 +68,7 @@ with open(tgt_filename, "a") as tgt_file:
 #################### footer ####################
 
 footer_html = """
+            </ul>
           </div>
         </div>
       </div>
