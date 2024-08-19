@@ -43,6 +43,7 @@ header_html += """
       <div id="publications" class="row" style="font-family: var(--serif-font);">
         <div id="{}" class="col-sm-12">
           <div class="service-box">
+            <ol reversed>
 """
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(header_html)
@@ -62,22 +63,10 @@ publications_html = ""
 for idx, pub in enumerate(publications):
     _pub_parser = PubParser(pub)
     pub_html = """
-            <div class="row">
-              <div class="col-md-1">
-                <div align="right">{}.</div>
-              </div>
-              <div class="col-md-10">
-                <div class="row">
-                  <div class="service-content">
-                    <div>
-                      {}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-    """.format(len(publications)-idx, _pub_parser.get_citation_formatted())
+              <li>
+                {}
+              </li>
+    """.format(_pub_parser.get_citation_formatted())
     publications_html += pub_html
 
 with open(tgt_filename, "a") as tgt_file:
@@ -86,6 +75,7 @@ with open(tgt_filename, "a") as tgt_file:
 #################### footer ####################
 
 footer_html = """
+            </ol>
           </div>
         </div>
       </div>
