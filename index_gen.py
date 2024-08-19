@@ -142,39 +142,25 @@ index_html += """
                 </h6>
               </div>
             </div>
+            <ul>
 """
 
 news = news_parser()
 for idx, news_piece in enumerate(news[:5]):
   index_html += """
-            <div class="row">
-              <div class="col-md-1">
-                <div align="right">{}</div>
-              </div>
-              <div class="col-md-10">
-                <div class="row">
-                    <p>
-                      [{}] {}
-                    </p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-""".format("&#9670;", news_piece["date"], news_piece["content"])
+              <li>
+                <p>
+                  [{}] {}
+                </p>
+              </li>
+""".format(news_piece["date"], news_piece["content"])
 index_html += """
-            <div class="row">
-              <div class="col-md-1">
-                <div align="right">{}</div>
-              </div>
-              <div class="col-md-10">
-                <div class="row">
-                    <p>
-                      <a href="news_page.html">...</a>
-                    </p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
+              <li>
+                <p>
+                  <a href="news_page.html">...</a>
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="col-sm-12">
@@ -233,7 +219,7 @@ index_html += """
             </div>
           </div>
         </div>
-""".format("&#9670;", "?")
+"""
 
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(index_html)
