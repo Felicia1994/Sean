@@ -42,22 +42,19 @@ for i in range(1):
   class_html = """
         <div class="col-sm-12">
           <div class="service-box">
-            <div class="row">
-              <div class="col-md-1">
-                <div align="right">{}</div>
-              </div>
-              <div class="col-md-10">
-                <div class="row">
-                    <p>
-                      {}
-                    </p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
+            <ul>
+              <li>
+                <p>
+                  Fall 2024:
+                  <a href="https://catalog.rpi.edu/preview_course_nopop.php?catoid=30&coid=72926" target="_blank">
+                    PHYS 1200 II
+                  </a>
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
-  """.format("&#9670;", "TBD")
+  """
   teaching_html += class_html
 
 with open(tgt_filename, "a") as tgt_file:
