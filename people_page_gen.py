@@ -38,6 +38,8 @@ with open(tgt_filename, "a") as tgt_file:
 
 #################### content ####################
 
+################ open positions #################
+
 people_html = ""
 open_positions_html = """
         <div class="col-sm-12">
@@ -157,6 +159,8 @@ open_positions_html = """
 """
 people_html += open_positions_html
 
+##################### tips #####################
+
 tips_html = """
         <div class="col-sm-12">
           <div class="service-box">
@@ -204,6 +208,8 @@ tips_html = """
 """
 # people_html += tips_html
 
+############### current members ################
+
 current_members_html = """
         <div class="col-sm-12">
           <div class="service-box">
@@ -218,19 +224,115 @@ current_members_html = """
                             Current members
                           </p>
                         </h2>
-                        <p>
-                          X, Y, Z
-                        </p>
                       </div>
                     </div>
                   </wide-padding>
                 </div>
               </div>
+"""
+
+current_members = []
+people_filename = "data/people.csv"
+with open(people_filename, 'r') as people_file:
+  people_reader = csv.DictReader(people_file)
+  for person in people_reader:
+    if person["display"] == "true" and person["category"] == "current member":
+      current_members.append(person)
+
+for current_member in current_members:
+  current_members_html += """
+              <div class="col-md-3">
+                <div class="row">
+                  <div class="col-sm-1 col-md-1"></div>
+                  <div class="col-sm-10 col-md-10">
+                    <div class="about-img">
+                      <img src="img/people/{}" class="img-fluid rounded b-shadow-a" alt="">
+                    </div>
+                  </div>
+                  <div class="col-sm-1 col-md-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-1 col-md-1"></div>
+                  <div class="col-sm-10 col-md-10">
+                    <div class="text-center" style="margin-top: 5px; margin-bottom: 15px;">
+                      {}
+                    </div>
+                  </div>
+                  <div class="col-sm-1 col-md-1"></div>
+                </div>
+              </div>
+  """.format(current_member["img"], current_member["name"])
+
+current_members_html += """
             </div>
           </div>
         </div>
 """
 # people_html += current_members_html
+
+################ group pictures ################
+
+group_pitures_html = """
+        <div class="col-sm-12">
+          <div class="service-box">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <wide-padding>
+                    <div id = "group-pictures">
+                      <div class="service-content">
+                        <h2 class="s-title text-center">
+                          <p class = "text-left">
+                            Group pictures
+                          </p>
+                        </h2>
+                      </div>
+                    </div>
+                  </wide-padding>
+                </div>
+              </div>
+"""
+
+group_pitures = []
+people_filename = "data/people.csv"
+with open(people_filename, 'r') as people_file:
+  people_reader = csv.DictReader(people_file)
+  for person in people_reader:
+    if person["display"] == "true" and person["category"] == "group":
+      group_pitures.append(person)
+
+for group_piture in group_pitures:
+  group_pitures_html += """
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-sm-1 col-md-1"></div>
+                  <div class="col-sm-10 col-md-10">
+                    <div class="about-img">
+                      <img src="img/people/{}" class="img-fluid rounded b-shadow-a" alt="">
+                    </div>
+                  </div>
+                  <div class="col-sm-1 col-md-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-1 col-md-1"></div>
+                  <div class="col-sm-10 col-md-10">
+                    <div class="text-center" style="margin-top: 5px; margin-bottom: 15px;">
+                      {}
+                    </div>
+                  </div>
+                  <div class="col-sm-1 col-md-1"></div>
+                </div>
+              </div>
+  """.format(group_piture["img"], group_piture["name"])
+
+group_pitures_html += """
+            </div>
+          </div>
+        </div>
+"""
+people_html += group_pitures_html
+
+#################### alumni ####################
 
 alumni_html = """
         <div class="col-sm-12">
@@ -246,14 +348,46 @@ alumni_html = """
                             Alumni
                           </p>
                         </h2>
-                        <p>
-                          Jing Ma
-                        </p>
                       </div>
                     </div>
                   </wide-padding>
                 </div>
               </div>
+"""
+
+alumni = []
+people_filename = "data/people.csv"
+with open(people_filename, 'r') as people_file:
+  people_reader = csv.DictReader(people_file)
+  for person in people_reader:
+    if person["display"] == "true" and person["category"] == "alumnus":
+      alumni.append(person)
+
+for alumnus in alumni:
+  alumni_html += """
+              <div class="col-md-3">
+                <div class="row">
+                  <div class="col-sm-1 col-md-1"></div>
+                  <div class="col-sm-10 col-md-10">
+                    <div class="about-img">
+                      <img src="img/people/{}" class="img-fluid rounded b-shadow-a" alt="">
+                    </div>
+                  </div>
+                  <div class="col-sm-1 col-md-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-1 col-md-1"></div>
+                  <div class="col-sm-10 col-md-10">
+                    <div class="text-center" style="margin-top: 5px; margin-bottom: 15px;">
+                      {}
+                    </div>
+                  </div>
+                  <div class="col-sm-1 col-md-1"></div>
+                </div>
+              </div>
+  """.format(alumnus["img"], alumnus["name"])
+
+alumni_html += """
             </div>
           </div>
         </div>
