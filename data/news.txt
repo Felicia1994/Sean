@@ -1,4 +1,23 @@
 ##
+date: 2025-01
+It was pleasant to present our work "Multipartite entanglement routing
+as a hypergraph immersion problem" at
+<a href="https://www.ddays.org/2025/index.html" target="_blank">Dynamics Days US 2025</a>.
+
+##
+date: 2024-12
+Happy to attend the 127th Statistical Mechanics Conference at Rutgers University
+(probably the oldest conference I've attended...).
+I gave a short talk about "path percolation," an interesting statistical model
+that is related to both quantum communication networks and physical networks!
+
+##
+date: 2024-10
+It was a great pleasure to present our work on "quantum networked memories"
+at the 
+<a href="https://www.imsi.institute/activities/statistical-methods-and-mathematical-analysis-for-quantum-information-science/quantum-networks/" target="_blank">IMSI Quantum Workshop</a>.
+
+##
 date: 2024-06
 We have three abstracts accepted for Oral Presentations at NetSci2024
 (<a href="https://netsci2024.com/" target="_blank">netsci2024.com</a>).
