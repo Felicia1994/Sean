@@ -64,7 +64,7 @@ for pub in publications:
           <div class="service-box">
             <div class="row">
               <div class="col-md-1"></div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <div class="row">
                   <div class="about-img">
                     <img src="{}" class="img-fluid rounded b-shadow-a" alt="">
@@ -72,7 +72,7 @@ for pub in publications:
                 </div>
               </div>
               <div class="col-md-1"></div>
-              <div class="col-md-7">
+              <div class="col-md-6">
                 <div class="row">
                   <div class="service-content">
                     <div>

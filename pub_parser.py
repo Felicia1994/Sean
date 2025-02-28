@@ -98,11 +98,11 @@ class PubParser(object):
         ans += self._get_authors_formatted()+" "
         ans += self._title+". "
         if self._has_doi:
-            ans += "<i>"+self._journal+"</i> "
-            ans += "<b>"+self._volume+"</b>, "
+            ans += "<b><i>"+self._journal+"</i></b> "
+            ans += ""+self._volume+", "
             ans += self._pages+" "
         else:
-            ans += "<i>"+self._journal+"</i> "
+            ans += "<b><i>"+self._journal+"</i></b> "
         ans += "("+self._year+"). "
         if self._has_doi:
             ans += "doi: <a href='http://doi.org/"+self._doi+"' target='_blank'><u>"+self._doi+"</u></a>"
