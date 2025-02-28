@@ -1,10 +1,11 @@
-try: 
+try:
     from BeautifulSoup import BeautifulSoup
 except ImportError:
     from bs4 import BeautifulSoup
 import re
 from pub_parser import PubParser
 import csv
+import json
 
 tgt_filename = "people_page.html"
 with open(tgt_filename, "w") as tgt_file:
@@ -208,67 +209,85 @@ tips_html = """
 """
 # people_html += tips_html
 
+################# people parser #################
+
+people_filename = "data/people.json"
+with open(people_filename, 'r') as people_file:
+    people = json.load(people_file)
+
+
+def people_compare(p1, p2):
+    if p1["lastname"] < p2["lastname"]:
+        return -1
+    if p1["lastname"] > p2["lastname"]:
+        return 1
+    if p1["firstname"] < p2["firstname"]:
+        return -1
+    if p1["firstname"] > p2["firstname"]:
+        return 1
+    return 0
+
 ############### current members ################
 
-current_members_html = """
-        <div class="col-sm-12">
-          <div class="service-box">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="row">
-                  <wide-padding>
-                    <div id = "current-members">
-                      <div class="service-content">
-                        <h2 class="s-title text-center">
-                          <p class = "text-left">
-                            Current members
-                          </p>
-                        </h2>
+current_members_html = ""
+for category_id, category in [("postdocs", "Postdoctoral Researchers"), ("graduates", "Graduate Students"), ("undergraduates", "Undergraduate Students")]:
+  current_members_html += """
+          <div class="col-sm-12">
+            <div class="service-box">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <wide-padding>
+                      <div id = "current-members-{}">
+                        <div class="service-content">
+                          <h2 class="s-title text-center">
+                            <p class = "text-left">
+                              {}
+                            </p>
+                          </h2>
+                        </div>
+                      </div>
+                    </wide-padding>
+                  </div>
+                </div>
+  """.format(category_id, category)
+
+  current_members = sorted(
+      people["current"][category_id], key=lambda p: (p["lastname"], p["firstname"]))
+
+  for current_member in current_members:
+      current_members_html += """
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-sm-1 col-md-1"></div>
+                    <div class="col-sm-2 col-md-2">
+                      <div class="about-img">
+                        <img src="img/people/{}" class="img-fluid rounded b-shadow-a" alt="">
                       </div>
                     </div>
-                  </wide-padding>
+                    <div class="col-sm-8 col-md-8">
+                      <div class="text-center" style="margin-top: 5px; margin-bottom: 15px;">
+                        <b>{}</b>
+                      </div>
+                      <div class="text-center" style="margin-top: 5px; margin-bottom: 15px;">
+                        {}
+                      </div>
+                    </div>
+                    <div class="col-sm-1 col-md-1"></div>
+                  </div>
                 </div>
-              </div>
-"""
+                <div class="col-md-12">
+                  <p>
+                  </p>
+                </div>
+    """.format(current_member["picture"], current_member["firstname"] + " " + current_member["lastname"], current_member["description"])
 
-current_members = []
-people_filename = "data/people.csv"
-with open(people_filename, 'r') as people_file:
-  people_reader = csv.DictReader(people_file)
-  for person in people_reader:
-    if person["display"] == "true" and person["category"] == "current member":
-      current_members.append(person)
-
-for current_member in current_members:
   current_members_html += """
-              <div class="col-md-3">
-                <div class="row">
-                  <div class="col-sm-1 col-md-1"></div>
-                  <div class="col-sm-10 col-md-10">
-                    <div class="about-img">
-                      <img src="img/people/{}" class="img-fluid rounded b-shadow-a" alt="">
-                    </div>
-                  </div>
-                  <div class="col-sm-1 col-md-1"></div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-1 col-md-1"></div>
-                  <div class="col-sm-10 col-md-10">
-                    <div class="text-center" style="margin-top: 5px; margin-bottom: 15px;">
-                      {}
-                    </div>
-                  </div>
-                  <div class="col-sm-1 col-md-1"></div>
-                </div>
               </div>
-  """.format(current_member["img"], current_member["name"])
-
-current_members_html += """
             </div>
           </div>
-        </div>
-"""
-# people_html += current_members_html
+  """
+people_html += current_members_html
 
 ################ group pictures ################
 
@@ -296,13 +315,13 @@ group_pitures_html = """
 group_pitures = []
 people_filename = "data/people.csv"
 with open(people_filename, 'r') as people_file:
-  people_reader = csv.DictReader(people_file)
-  for person in people_reader:
-    if person["display"] == "true" and person["category"] == "group":
-      group_pitures.append(person)
+    people_reader = csv.DictReader(people_file)
+    for person in people_reader:
+        if person["display"] == "true" and person["category"] == "group":
+            group_pitures.append(person)
 
 for group_piture in group_pitures:
-  group_pitures_html += """
+    group_pitures_html += """
               <div class="col-md-6">
                 <div class="row">
                   <div class="col-sm-1 col-md-1"></div>
@@ -358,13 +377,13 @@ alumni_html = """
 alumni = []
 people_filename = "data/people.csv"
 with open(people_filename, 'r') as people_file:
-  people_reader = csv.DictReader(people_file)
-  for person in people_reader:
-    if person["display"] == "true" and person["category"] == "alumnus":
-      alumni.append(person)
+    people_reader = csv.DictReader(people_file)
+    for person in people_reader:
+        if person["display"] == "true" and person["category"] == "alumnus":
+            alumni.append(person)
 
 for alumnus in alumni:
-  alumni_html += """
+    alumni_html += """
               <div class="col-md-3">
                 <div class="row">
                   <div class="col-sm-1 col-md-1"></div>
@@ -416,13 +435,13 @@ collaborators_html = """
 collaborators = []
 collaborators_filename = "data/collaborators.csv"
 with open(collaborators_filename) as collaborators_file:
-  collaborators_reader = csv.reader(collaborators_file)
-  for collaborator in collaborators_reader:
-    collaborators.append(collaborator)
-collaborators.sort(key=lambda c : c[0].split()[-1])
+    collaborators_reader = csv.reader(collaborators_file)
+    for collaborator in collaborators_reader:
+        collaborators.append(collaborator)
+collaborators.sort(key=lambda c: c[0].split()[-1])
 
 for name, affiliation in collaborators:
-  collaborators_html += """
+    collaborators_html += """
                         <p>
                           {}, {}
                         </p>
@@ -463,10 +482,10 @@ collaborators_html = """
 """
 
 collaborators = ["bar-ilan.png", "bu.png", "icl.jpg",
-"kth.png", "nordita.png", "neu.png", "nwu.png", "oist.jpg", "oxford.jpg"]
+                 "kth.png", "nordita.png", "neu.png", "nwu.png", "oist.jpg", "oxford.jpg"]
 
 for collaborator in collaborators:
-  collaborators_html += """
+    collaborators_html += """
               <img src="img/logos/{}" style="width: 18%; height: 18%; margin: auto;">
   """.format(collaborator)
 
