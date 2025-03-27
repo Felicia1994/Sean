@@ -1,4 +1,10 @@
 ##
+date: 2025-03
+Our paper "Unveiling the importance of nonshortest paths in quantum networks" is published in Science Advances
+(<a href="https://doi.org/10.1126/sciadv.adt2404" target="_blank">doi.org/10.1126/sciadv.adt2404</a>).
+Congratulations to Xinqi and Gaogao!
+
+##
 date: 2025-01
 Our paper "Path Percolation in Quantum Communication Networks" is featured in
 <a href="https://phys.org/" target="_blank">phys.org</a>:
