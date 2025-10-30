@@ -207,8 +207,9 @@ for category_id, category in [("postdocs", "Postdoctoral Researchers"), ("gradua
                 </div>
   """.format(category_id, category)
 
-  current_members = sorted(
-      people["current"][category_id], key=lambda p: (p["lastname"], p["firstname"]))
+  # current_members = sorted(
+  #     people["current"][category_id], key=lambda p: (p["lastname"], p["firstname"]))
+  current_members = people["current"][category_id]
 
   for current_member in current_members:
       current_members_html += """
