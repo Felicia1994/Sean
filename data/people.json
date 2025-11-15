@@ -18,14 +18,14 @@
             {
                 "firstname": "Nicholas M.",
                 "lastname": "Pardave",
-                "picture": "placeholder.jpg",
-                "description": ""
+                "picture": "nicholas_pardave.jpg",
+                "description": "I received a dual B.S in Computer Science & Mathematics and a M.S. degree in Computer Science at RPI. I am currently working on my Ph.D. with a main focus in Quantum Computing. Some of my academic interests include Quantum Computing, Machine Learning and Optimization while some of my personal interests include running, rock climbing, and hiking."
             },
             {
                 "firstname": "Stanley",
                 "lastname": "Goodwin",
-                "picture": "placeholder.jpg",
-                "description": ""
+                "picture": "stanley_goodwin.png",
+                "description": "Hello, I'm Stanley Goodwin. I am a Physics Ph.D. candidate with an interest in theoretical statistical mechanics, information theory, and quantum computing."
             }
         ],
         "undergraduates": [
