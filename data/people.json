@@ -46,15 +46,18 @@
     "group_pictures": [
         {
             "name": "",
-            "picture": "2025fall.jpeg"
+            "picture": "2025fall.jpeg",
+            "description": "2025"
         },
         {
             "name": "",
-            "picture": "2025spring.jpeg"
+            "picture": "2025spring.jpeg",
+            "description": "2025"
         },
         {
             "name": "",
-            "picture": "2024fall.jpeg"
+            "picture": "2024fall.jpeg",
+            "description": "2024"
         }
     ],
     "collaborators": [

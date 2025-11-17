@@ -292,7 +292,7 @@ for group_picture in group_pictures:
                   <div class="col-sm-1 col-md-1"></div>
                 </div>
               </div>
-  """.format(group_picture["picture"], group_picture["name"])
+  """.format(group_picture["picture"], group_picture["description"])
 
 group_pictures_html += """
             </div>
