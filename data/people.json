@@ -42,5 +42,57 @@
                 "description": ""
             }
         ]
-    }
+    },
+    "group_pictures": [
+        {
+            "name": "",
+            "picture": "2025fall.jpeg"
+        },
+        {
+            "name": "",
+            "picture": "2025spring.jpeg"
+        },
+        {
+            "name": "",
+            "picture": "2024fall.jpeg"
+        }
+    ],
+    "collaborators": [
+        {
+            "name": "",
+            "picture": "bar-ilan.png"
+        },
+        {
+            "name": "",
+            "picture": "bu.png"
+        },
+        {
+            "name": "",
+            "picture": "icl.jpg"
+        },
+        {
+            "name": "",
+            "picture": "kth.png"
+        },
+        {
+            "name": "",
+            "picture": "nordita.png"
+        },
+        {
+            "name": "",
+            "picture": "neu.png"
+        },
+        {
+            "name": "",
+            "picture": "nwu.png"
+        },
+        {
+            "name": "",
+            "picture": "oist.jpg"
+        },
+        {
+            "name": "",
+            "picture": "oxford.jpg"
+        }
+    ]
 }
