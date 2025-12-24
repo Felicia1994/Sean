@@ -46,7 +46,7 @@ for i in range(1):
               <li>
                 <p>
                   Spring 2026:
-                  <a href="https://catalog.rpi.edu/preview_course_nopop.php?catoid=33&coid=84193" target="_blank">
+                  <a href="https://catalog.rpi.edu/preview_course.php?catoid=33&coid=84193" target="_blank">
                     PHYS 1110 - Physics I
                   </a>
                 </p>
