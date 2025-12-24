@@ -45,6 +45,14 @@ for i in range(1):
             <ul>
               <li>
                 <p>
+                  Spring 2026:
+                  <a href="https://catalog.rpi.edu/preview_course_nopop.php?catoid=33&coid=84193" target="_blank">
+                    PHYS 1110 - Physics I
+                  </a>
+                </p>
+              </li>
+              <li>
+                <p>
                   Fall 2025:
                   <a href="https://catalog.rpi.edu/preview_course.php?catoid=33&coid=83266" target="_blank">
                     PHYS 4100 - Introductory Quantum Mechanics
