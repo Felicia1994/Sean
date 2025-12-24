@@ -11,7 +11,7 @@ Our paper "Quantum Communication Networks Enhanced by Distributed Quantum Memori
 (<a href="https://doi.org/10.22331/q-2025-12-15-1948" target="_blank">doi.org/10.22331/q-2025-12-15-1948</a>).
 
 ##
-date: 2025-12
+date: 2025-11
 I am thrilled to share that our RPI team has secured a five-year grant
 through the DOE-funded
 <a href="https://www.energy.gov/articles/energy-department-announces-625-million-advance-next-phase-national-quantum-information" target="_blank">Co-design Center for Quantum Advantage (C2QA)</a>,
@@ -19,19 +19,19 @@ led by Brookhaven National Laboratory.
 Looking forward to the work ahead!
 
 ##
-date: 2025-12
+date: 2025-11
 I am now affilated with the National Institute for Theory and Mathematics and Biology (NITMB),
 an NSF-Simons co-funded center led by Northwestern University and the University of Chicago
 (<a href="https://www.nitmb.org/" target="_blank">nitmb.org</a>).
 
 ##
-date: 2025-12
+date: 2025-11
 It was a true honor to be invited to present at the C.N. Yang Institute for Theoretical Physics (YITP)
 seminar at Stony Brook University.
 Yang's magnificent contributions to statistical physics will always be remembered. R.I.P.
 
 ##
-date: 2025-12
+date: 2025-11
 We have five Oral Presentations accepted for CNA 25
 (<a href="https://complexnetworks.org" target="_blank">complexnetworks.org</a>)!
 <p>1. Benjamin Black: A Nested Dual Representation and Physical Tree Networks<br>
