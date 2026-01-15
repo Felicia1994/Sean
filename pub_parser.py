@@ -25,14 +25,12 @@ class PubParser(object):
                 self._abstract = item.find("td").text
             elif item.find("th").text=="Date":
                 date = item.find("td").text
-                date = re.split('-', date)
+                date = re.split('-|/', date)
+                assert(len(date) >= 2)
+                assert(len(date[0]) == 4 and date[0].isdigit())
                 self._year = date[0]
                 self._month = date[1]
                 self._day = date[2] if len(date) >= 3 else "1"
-                # date = re.split(' |/|-', date)
-                # for x in date:
-                #     if len(x)==4 and x.isdigit():
-                #         self._year = x
             elif item.find("th").text=="URL":
                 self._url = item.find("td").text        
             elif item.find("th").text=="Volume":
