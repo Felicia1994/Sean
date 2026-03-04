@@ -38,10 +38,6 @@ header_html += """
           </div>
         </div>
       </div>
-      <div id="news" class="row">
-        <div class="col-sm-12">
-          <div class="service-box">
-            <ul>
 """
 with open(tgt_filename, "a") as tgt_file:
     tgt_file.write(header_html)
@@ -52,14 +48,44 @@ news_html = ""
 
 news = news_parser()
 
-for idx, news_piece in enumerate(news):
+all_years = set()
+for news_piece in news:
+  all_years.add(news_piece["year"])
+all_years = list(all_years)
+all_years.sort(reverse=True)
+
+for year in all_years:
   new_html = """
+      <div id="news" class="row">
+        <div class="col-sm-12">
+          <div class="service-box">
+            <div class="row">
+              <wide-padding>
+                <h2 class="s-title text-center">
+                  <p class = "text-left">
+                    {}
+                  </p>
+                </h2>
+              </wide-padding>
+            </div>
+            <ul>
+  """.format(year)
+  for idx, news_piece in enumerate(news):
+    if news_piece["year"] != year:
+      continue
+    new_html += """
               <li>
                 <p>
                   [{}] {}
                 </p>
               </li>
-  """.format(news_piece["date"], news_piece["content"])
+    """.format(news_piece["date"], news_piece["content"])
+  new_html += """
+            </ul>
+          </div>
+        </div>
+      </div>
+  """
   news_html += new_html
 
 with open(tgt_filename, "a") as tgt_file:
@@ -68,10 +94,6 @@ with open(tgt_filename, "a") as tgt_file:
 #################### footer ####################
 
 footer_html = """
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 """

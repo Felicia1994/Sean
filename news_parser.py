@@ -20,18 +20,19 @@ def format_date(date_raw):
     l = date_raw.split('-')
     return dict_month[int(l[1])] + ", " + l[0]
 
+def get_year(date_raw):
+    return date_raw.split('-')[0]
+
 def news_parser():
     news = []
     news_filename = "data/news.txt"
     for line in open(news_filename):
         if line.strip() == "##":
-            news.append(defaultdict())
-            news[-1]["date_raw"] = ""
-            news[-1]["date"] = ""
-            news[-1]["content"] = ""
+            news.append(defaultdict(str))
         elif line.startswith("date: "):
             news[-1]["date_raw"] = line.strip()[6:]
             news[-1]["date"] = format_date(news[-1]["date_raw"])
+            news[-1]["year"] = get_year(news[-1]["date_raw"])
         else:
             news[-1]["content"] += line
     return news
