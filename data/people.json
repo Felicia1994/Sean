@@ -32,13 +32,25 @@
             {
                 "firstname": "Benjamin",
                 "lastname": "Black",
-                "picture": "placeholder.jpg",
+                "picture": "",
                 "description": "Benjamin Black is an undergraduate physics major. His research is into the degree dynamics of river networks, particularly focusing on whether a physical aspect of river networks results in them exhibiting scale-free properties, and if this extends to other physical networks. Benjamin's other interests include playing French Horn in the Rensselaer Orchestra and Wind Symphony, being part of the Society of Physics Students, Rensselaer Model Railroad Society, RPI Curling club, and in his free time enjoys hiking and mountain biking."
+            },
+            {
+                "firstname": "Chris",
+                "lastname": "Choi",
+                "picture": "",
+                "description": ""
             },
             {
                 "firstname": "Zeke",
                 "lastname": "Gentchos",
-                "picture": "placeholder.jpg",
+                "picture": "",
+                "description": "Zeke Gentchos is an undergraduate mathematics and physics dual major. His research is the use and development of an algorithm for finding hypergaph immersions. This has applications in (but not limited to) quantum networks and communication networks."
+            },
+            {
+                "firstname": "Oliver",
+                "lastname": "Trapp",
+                "picture": "",
                 "description": ""
             }
         ]

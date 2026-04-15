@@ -212,6 +212,8 @@ for category_id, category in [("postdocs", "Postdoctoral Researchers"), ("gradua
   current_members = people["current"][category_id]
 
   for current_member in current_members:
+      if current_member["picture"] == "":
+        current_member["picture"] = "placeholder.jpg"
       current_members_html += """
                 <div class="col-md-12">
                   <div class="row">
