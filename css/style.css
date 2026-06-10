@@ -1298,6 +1298,19 @@ horizontal-padding {
   margin-right: 30px;
 }
 
+.people-copy,
+.people-description {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.group-picture {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* myclick:hover {
   color: var(--darker);
   cursor: zoom-in;
@@ -1320,4 +1333,3 @@ horizontal-padding {
   --serif-font:'Times New Roman';
   --sans-serif-font:'Verdana',serif;  
 }
-

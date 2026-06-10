@@ -1,9 +1,4 @@
-try:
-    from BeautifulSoup import BeautifulSoup
-except ImportError:
-    from bs4 import BeautifulSoup
 import re
-from pub_parser import PubParser
 import csv
 import json
 
@@ -68,7 +63,7 @@ open_positions_html = """
                   <wide-padding>
                     <div class="service-content">
                       <!-- <div id="expand-open-positions" style="display: none;"> -->
-                      <div id="expand-open-positions">
+                      <div id="expand-open-positions" class="people-copy">
                         <p><b>Undergraduate students:</b></p>
                         <p>
                           RPI undergraduates who are interested in earning credits
@@ -212,6 +207,8 @@ for category_id, category in [("postdocs", "Postdoctoral Researchers"), ("gradua
   current_members = people["current"][category_id]
 
   for current_member in current_members:
+      if current_member.get("visible") is False:
+        continue
       if current_member["picture"] == "":
         current_member["picture"] = "placeholder.jpg"
       current_members_html += """
@@ -227,7 +224,7 @@ for category_id, category in [("postdocs", "Postdoctoral Researchers"), ("gradua
                       <div class="text-center" style="margin-top: 5px; margin-bottom: 15px;">
                         <b>{}</b>
                       </div>
-                      <div class="text-center" style="margin-top: 5px; margin-bottom: 15px;">
+                      <div class="people-description" style="margin-top: 5px; margin-bottom: 15px;">
                         {}
                       </div>
                     </div>
@@ -279,7 +276,7 @@ for group_picture in group_pictures:
                   <div class="col-sm-1 col-md-1"></div>
                   <div class="col-sm-10 col-md-10">
                     <div class="about-img">
-                      <img src="img/group/{}" class="img-fluid rounded b-shadow-a" alt="">
+                      <img src="img/group/{}" class="img-fluid rounded b-shadow-a group-picture" alt="">
                     </div>
                   </div>
                   <div class="col-sm-1 col-md-1"></div>
