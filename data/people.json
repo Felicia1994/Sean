@@ -51,7 +51,8 @@
                 "firstname": "Oliver",
                 "lastname": "Trapp",
                 "picture": "",
-                "description": ""
+                "description": "",
+                "visible": false
             }
         ]
     },
