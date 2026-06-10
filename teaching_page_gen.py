@@ -1,10 +1,3 @@
-try: 
-    from BeautifulSoup import BeautifulSoup
-except ImportError:
-    from bs4 import BeautifulSoup
-import re
-from pub_parser import PubParser
-
 tgt_filename = "teaching_page.html"
 with open(tgt_filename, "w") as tgt_file:
     pass
@@ -43,6 +36,14 @@ for i in range(1):
         <div class="col-sm-12">
           <div class="service-box">
             <ul>
+              <li>
+                <p>
+                  Fall 2026:
+                  <a href="https://catalog.rpi.edu/preview_course.php?catoid=33&coid=83266" target="_blank">
+                    PHYS 4100 - Introductory Quantum Mechanics
+                  </a>
+                </p>
+              </li>
               <li>
                 <p>
                   Spring 2026:
