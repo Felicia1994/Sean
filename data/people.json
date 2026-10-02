@@ -26,14 +26,6 @@
                 "lastname": "Goodwin",
                 "picture": "stanley_goodwin.png",
                 "description": "Hello, I'm Stanley Goodwin. I am a Physics Ph.D. candidate with an interest in theoretical statistical mechanics, information theory, and quantum computing."
-            }
-        ],
-        "undergraduates": [
-            {
-                "firstname": "Benjamin",
-                "lastname": "Black",
-                "picture": "",
-                "description": "Benjamin Black is an undergraduate physics major. His research is into the degree dynamics of river networks, particularly focusing on whether a physical aspect of river networks results in them exhibiting scale-free properties, and if this extends to other physical networks. Benjamin's other interests include playing French Horn in the Rensselaer Orchestra and Wind Symphony, being part of the Society of Physics Students, Rensselaer Model Railroad Society, RPI Curling club, and in his free time enjoys hiking and mountain biking."
             },
             {
                 "firstname": "Chris",
@@ -45,7 +37,15 @@
                 "firstname": "Zeke",
                 "lastname": "Gentchos",
                 "picture": "",
-                "description": "Zeke Gentchos is an undergraduate mathematics and physics dual major. His research is the use and development of an algorithm for finding hypergaph immersions. This has applications in (but not limited to) quantum networks and communication networks."
+                "description": "Zeke Gentchos is a master's student in mathematics and physics dual major. His research is the use and development of an algorithm for finding hypergaph immersions. This has applications in (but not limited to) quantum networks and communication networks."
+            }
+        ],
+        "undergraduates": [
+            {
+                "firstname": "Benjamin",
+                "lastname": "Black",
+                "picture": "",
+                "description": "Benjamin Black is an undergraduate physics major. His research is into the degree dynamics of river networks, particularly focusing on whether a physical aspect of river networks results in them exhibiting scale-free properties, and if this extends to other physical networks. Benjamin's other interests include playing French Horn in the Rensselaer Orchestra and Wind Symphony, being part of the Society of Physics Students, Rensselaer Model Railroad Society, RPI Curling club, and in his free time enjoys hiking and mountain biking."
             },
             {
                 "firstname": "Oliver",
