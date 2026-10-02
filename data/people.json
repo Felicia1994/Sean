@@ -53,6 +53,12 @@
                 "picture": "",
                 "description": "",
                 "visible": false
+            },
+            {
+                "firstname": "Harper",
+                "lastname": "Werme",
+                "picture": "harper_werme.jpg",
+                "description": "Harper Werme is an undergraduate physics major. She is interested in quantum communications research and is currently working on the long-range coupling problem in superconducting qubits. Her other interests include running, traveling, and playing for RPI Women's Club Soccer."
             }
         ]
     },
