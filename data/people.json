@@ -59,6 +59,12 @@
                 "lastname": "Werme",
                 "picture": "harper_werme.jpg",
                 "description": "Harper Werme is an undergraduate physics major. She is interested in quantum communications research and is currently working on the long-range coupling problem in superconducting qubits. Her other interests include running, traveling, and playing for RPI Women's Club Soccer."
+            },
+            {
+                "firstname": "Oliver",
+                "lastname": "Trapp",
+                "picture": "oliver_trapp.jpg",
+                "description": "Oliver Trapp is an undergraduate studying physics and mathematics at RPI. His research investigates applications of quantum mechanical frameworks to high-frequency financial markets, focusing on encoding limit order book distributions. His other interests include playing guitar and electric bass in RPI's jazz ensembles."
             }
         ]
     },
